@@ -10,6 +10,9 @@
     label { font-weight: bold; margin-top: 10px; display: block; }
     pre { background: #f8f8f8; padding: 10px; border-left: 4px solid #ccc; white-space: pre-wrap; }
   </style>
+    <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js"></script>
 </head>
 <body>
   <h1>推理问卷标注系统</h1>
@@ -280,7 +283,7 @@ D：单一的（Single）
 
     }
     
-        function saveAndNext() {
+    function saveAndNext() {
       const reasoning_steps = collectReasoningSteps();
       const finalAnswer = document.getElementById("final-answer").value;
       const isExpert = document.getElementById("is-expert").value;
@@ -313,19 +316,15 @@ D：单一的（Single）
       markCompleted(q.id);
       saveToStorage(entry);
 
-      // ✅ 提交至 Google Sheets（你需要先部署 Apps Script）
-      fetch("https://script.google.com/macros/s/AKfycbz8uavBJk2qmVIn-PXhqIXGM0npbv7xD5pX6XZQbuVxuY-wIqzWhm6cqqZt-NCVfwEo/exec", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(entry)
-      })
-      .then(res => res.json())
-      .then(data => {
-        console.log("✅ 提交成功:", data);
-      })
-      .catch(err => {
-        console.error("❌ 提交失败:", err);
-      });
+      // ✅ 替换为 Firebase 实时数据库提交
+      const timestamp = Date.now();
+      firebase.database().ref("responses/" + timestamp).set(entry)
+        .then(() => {
+          console.log("✅ 已成功提交到 Firebase");
+        })
+        .catch((err) => {
+          console.error("❌ Firebase 提交失败:", err);
+        });
 
       questionIndex++;
       if (questionIndex >= questions.length) {
@@ -335,6 +334,7 @@ D：单一的（Single）
         showQuestion();
       }
     }
+
 
 
     function goBack() {
@@ -475,7 +475,25 @@ D：单一的（Single）
     location.reload();
   }
 }
+  const firebaseConfig = {
+    apiKey: "AIzaSyBEY2NQRQoOYupja0VAT-ybcIVn7nDtitk",
+    authDomain: "reasoning-survey.firebaseapp.com",
+    databaseURL: "https://reasoning-survey-default-rtdb.firebaseio.com",
+    projectId: "reasoning-survey",
+    storageBucket: "reasoning-survey.firebasestorage.app",
+    messagingSenderId: "307395227633",
+    appId: "1:307395227633:web:e79e929d0b7bb3e0b8de50"
+  };
 
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  function saveToFirebase(entry) {
+    const timestamp = Date.now();
+    db.ref("responses/" + timestamp).set(entry)
+      .then(() => console.log("✅ 成功提交到 Firebase"))
+      .catch((error) => console.error("❌ 提交失败:", error));
+  }
   </script>
   </body>
   </html>
