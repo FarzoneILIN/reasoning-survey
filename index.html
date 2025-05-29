@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>推理问卷标注系统</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; max-width: 900px; margin: auto; }
+    textarea { width: 100%; height: 100px; }
+    .hidden { display: none; }
+    label { font-weight: bold; margin-top: 10px; display: block; }
+    pre { background: #f8f8f8; padding: 10px; border-left: 4px solid #ccc; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>推理问卷标注系统</h1>
+
+  <!-- ✅ Step 1: 说明区域 -->
+  <div id="instructions">
+    <h3>说明：</h3>
+    <ol>
+      <li><strong>问题</strong>：认真阅读题目，仔细思考所给选项，从中选择正确的答案。</li>
+      <li><strong>推理过程</strong>：从你最初认为可能正确的答案开始解释。思考为什么某些选项可能正确，为什么其他可能不正确。
+        <ul>
+          <li>描述你的思考过程——不要跳过任何步骤，即使某些步骤看起来微不足道。</li>
+          <li>如果你做出了某个假设或猜测，请解释你为什么会那样想。</li>
+          <li>如果你改变了想法或放弃了某个选项，请说明原因。</li>
+        </ul>
+      </li>
+      <li><strong>最终答案</strong>：在完成整个思考过程后，选择你认为正确的选项，并解释你为什么选择它。如果你不确定，也请说明你的不确定性。</li>
+    </ol>
+
+    <h4>好的回答示例：</h4>
+    <pre>
+问题：“回声是由哪种类型的声音反射产生的？”
+A：直接的（Direct）
+B：远处的（Distant）
+C：变化的（Varied）
+D：单一的（Single）
+
+“这个问题是关于哪种反射类型会产生回声，并提供了四个选项。将它们与‘反射’结合，可以得到‘直接反射’、‘远距离反射’、‘变化反射’和‘单一反射’。首先我需要回忆一下什么是回声。在物理课上，我学过回声是由镜面反射的声波产生的。这种反射发生在声波遇到大而平滑且坚硬的表面（比如悬崖或墙壁）时，声波会沿一个方向有序地反射回来。这种反射保留了声音的结构，使它能作为原声的清晰重复回到听者耳中。但‘镜面反射’并不在提供的选项中。让我确认一下术语是否准确。在声音的语境中，有时人们也称其为‘硬反射’或‘直接反射’。所以答案很明确，我应该选择 A。”
+    </pre>
+    <button onclick="showUserInfo()">我已阅读说明，开始填写</button>
+  </div>
+
+  <!-- ✅ Step 2: 用户信息 -->
+  <div id="user-info" class="hidden">
+    <label>性别：<input type="text" id="gender"></label>
+    <label>学校：<input type="text" id="school"></label>
+    <label>学历：<input type="text" id="degree"></label>
+    <label>地区：<input type="text" id="region"></label>
+    <button onclick="showTipi()">填写大五人格测试</button>
+  </div>
+
+  <!-- ✅ Step 2.5: TIPI 测试 -->
+  <div id="tipi-test" class="hidden">
+    <h3>TIPI 大五人格测试</h3>
+    <p>请根据你自己的感觉，选择每一对形容词在你身上的适用程度（1=非常不同意，7=非常同意）</p>
+    <div id="tipi-items"></div>
+    <button onclick="confirmTipi()">确认提交 TIPI 测试</button>
+  </div>
+
+
+
+  <!-- ✅ Step 3: 选择专业 -->
+  <div id="category-select-section" class="hidden">
+    <label>选择题目类型（专业）：</label>
+    <select id="category-select">
+      <option value="">请选择</option>
+      <option value="biology">biology</option>
+      <option value="chemistry">chemistry</option>
+      <option value="physics">physics</option>
+      <option value="Humanities">Humanities</option>
+      <option value="medicine">medicine</option>
+      <option value="computer">computer</option>
+    </select>
+    <button onclick="startCategory()">开始标注</button>
+  </div>
+
+  <!-- ✅ Step 4: 标注界面 -->
+  <div id="questionnaire" class="hidden">
+    <div id="question-box"></div>
+
+    <label>你是否该题目专业方向？</label>
+    <select id="is-expert">
+      <option value="">请选择</option>
+      <option value="是">是</option>
+      <option value="否">否</option>
+    </select>
+
+    <label>推理过程：</label>
+    <div id="reasoning-steps-container"></div>
+    <button type="button" onclick="addReasoningStep()">➕ 新增步骤</button>
+
+    <label>最终答案：</label>
+    <select id="final-answer">
+      <option value="">请选择</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="不确定">不确定</option>
+    </select>
+
+    <br><br>
+    <button onclick="saveAndNext()">保存并进入下一题</button>
+    <button onclick="downloadResults()">📤 下载已标注数据</button>
+  </div>
+
+  <!-- ✅ 完成提示 -->
+  <div id="done" class="hidden">
+    <h2>该专业所有题目已标注完成 🎉</h2>
+    <button onclick="reset()">切换其他专业</button>
+  </div>
+
+  <script>
+    let userInfo = {};
+    let fileIndex = {};
+    let currentCategory = "";
+    let fileQueue = [];
+    let questions = [];
+    let questionIndex = 0;
+    let completedMap = {};
+    let responses = [];
+  
+    const tipiItems = [
+      { id: 1, text: "我属于外向型、爱交际", reverse: false },
+      { id: 2, text: "我属于冷静型、安静", reverse: true },
+      { id: 3, text: "我喜欢有条理、做事计划性强", reverse: false },
+      { id: 4, text: "我有些懒惰", reverse: true },
+      { id: 5, text: "我容易紧张", reverse: false },
+      { id: 6, text: "我情绪稳定，不易心烦", reverse: true },
+      { id: 7, text: "我是有创造力、有想象力的人", reverse: false },
+      { id: 8, text: "我是传统型、不会尝试新奇事物", reverse: true },
+      { id: 9, text: "我考虑周到、关心他人", reverse: false },
+      { id: 10, text: "我有时很苛刻", reverse: true }
+    ];
+  
+    function showUserInfo() {
+      document.getElementById("instructions").classList.add("hidden");
+      document.getElementById("user-info").classList.remove("hidden");
+    }
+  
+    function showTipi() {
+      userInfo = {
+        gender: document.getElementById("gender").value,
+        school: document.getElementById("school").value,
+        degree: document.getElementById("degree").value,
+        region: document.getElementById("region").value
+      };
+      document.getElementById("user-info").classList.add("hidden");
+      document.getElementById("tipi-test").classList.remove("hidden");
+  
+      const container = document.getElementById("tipi-items");
+      container.innerHTML = "";
+      tipiItems.forEach(({ id, text }) => {
+        const div = document.createElement("div");
+        const label = document.createElement("label");
+        label.innerText = `${id}. ${text}`;
+        const select = document.createElement("select");
+        select.id = `tipi-${id}`;
+        for (let i = 1; i <= 7; i++) {
+          const opt = document.createElement("option");
+          opt.value = i;
+          opt.innerText = i;
+          select.appendChild(opt);
+        }
+        div.appendChild(label);
+        div.appendChild(select);
+        container.appendChild(div);
+      });
+    }
+  
+    function confirmTipi() {
+      const scores = {};
+      for (let i = 1; i <= 10; i++) {
+        scores[`item${i}`] = parseInt(document.getElementById(`tipi-${i}`).value, 10);
+      }
+      userInfo.tipi_scores = scores;
+  
+      localStorage.setItem("user_info", JSON.stringify(userInfo));
+      document.getElementById("tipi-test").classList.add("hidden");
+      document.getElementById("category-select-section").classList.remove("hidden");
+    }
+  
+    async function startCategory() {
+      currentCategory = document.getElementById("category-select").value;
+      if (!currentCategory) return alert("请选择一个专业");
+  
+      loadCompletedFromStorage();
+  
+      if (Object.keys(fileIndex).length === 0) {
+        const res = await fetch("file_index.json");
+        fileIndex = await res.json();
+      }
+  
+      fileQueue = (fileIndex[currentCategory] || []).slice();
+      if (fileQueue.length === 0) {
+        alert("该专业下无题目文件");
+        return;
+      }
+  
+      responses = [];
+      questionIndex = 0;
+      loadNextFile();
+    }
+  
+    function loadNextFile() {
+      if (fileQueue.length === 0) {
+        document.getElementById("questionnaire").classList.add("hidden");
+        document.getElementById("done").classList.remove("hidden");
+        return;
+      }
+  
+      const file = fileQueue.shift();
+      fetch(file)
+        .then(res => res.json())
+        .then(data => {
+          questions = data.filter(q => !isCompleted(q.id));
+          questionIndex = 0;
+          if (questions.length === 0) {
+            loadNextFile();
+          } else {
+            document.getElementById("done").classList.add("hidden");
+            document.getElementById("questionnaire").classList.remove("hidden");
+            showQuestion();
+          }
+        });
+    }
+  
+    function showQuestion() {
+      const q = questions[questionIndex];
+      const html = `
+        <h3>题目 ${questionIndex + 1} / ${questions.length}</h3>
+        <p><strong>${q.question}</strong></p>
+        <p>A: ${q.A}</p>
+        <p>B: ${q.B}</p>
+        <p>C: ${q.C}</p>
+        <p>D: ${q.D}</p>
+      `;
+      document.getElementById("question-box").innerHTML = html;
+      initReasoningSteps();
+      document.getElementById("final-answer").value = "";
+      document.getElementById("is-expert").value = "";
+    }
+  
+    function saveAndNext() {
+      const q = questions[questionIndex];
+      const reasoning_steps = collectReasoningSteps();
+      const finalAnswer = document.getElementById("final-answer").value;
+      const isExpert = document.getElementById("is-expert").value;
+  
+      const entry = {
+        user_info: { ...userInfo },  // 包括TIPI
+        id: q.id,
+        source_folder: currentCategory,
+        question: q.question,
+        options: { A: q.A, B: q.B, C: q.C, D: q.D },
+        user_is_expert: isExpert,
+        reasoning_steps,
+        final_answer: finalAnswer,
+        Reasoning_type: q.Reasoning_type || "abduction"
+      };
+  
+      responses.push(entry);
+      markCompleted(q.id);
+      saveToStorage(entry);
+  
+      questionIndex++;
+      if (questionIndex >= questions.length) {
+        loadNextFile();
+      } else {
+        showQuestion();
+      }
+    }
+  
+    function reset() {
+      document.getElementById("done").classList.add("hidden");
+      document.getElementById("questionnaire").classList.add("hidden");
+      document.getElementById("category-select").value = "";
+    }
+  
+    function initReasoningSteps() {
+      const container = document.getElementById("reasoning-steps-container");
+      container.innerHTML = '';
+      addReasoningStep();
+    }
+  
+    function addReasoningStep(defaultText = "") {
+      const container = document.getElementById("reasoning-steps-container");
+      const stepIndex = container.children.length + 1;
+      const div = document.createElement('div');
+      div.style.marginBottom = '10px';
+      const label = document.createElement('label');
+      label.innerText = `推理步骤 ${stepIndex}`;
+      const textarea = document.createElement('textarea');
+      textarea.rows = 4;
+      textarea.style.width = '100%';
+      textarea.value = defaultText;
+      const removeBtn = document.createElement('button');
+      removeBtn.innerText = '删除该步骤';
+      removeBtn.type = 'button';
+      removeBtn.style.marginTop = '5px';
+      removeBtn.onclick = () => {
+        container.removeChild(div);
+        refreshReasoningLabels();
+      };
+      div.appendChild(label);
+      div.appendChild(textarea);
+      div.appendChild(document.createElement('br'));
+      div.appendChild(removeBtn);
+      container.appendChild(div);
+    }
+  
+    function refreshReasoningLabels() {
+      const labels = document.querySelectorAll("#reasoning-steps-container label");
+      labels.forEach((label, index) => {
+        label.innerText = `推理步骤 ${index + 1}`;
+      });
+    }
+  
+    function collectReasoningSteps() {
+      const steps = [];
+      const textareas = document.querySelectorAll("#reasoning-steps-container textarea");
+      textareas.forEach(t => {
+        const val = t.value.trim();
+        if (val) steps.push(val);
+      });
+      return steps;
+    }
+  
+    function loadCompletedFromStorage() {
+      const saved = localStorage.getItem("completed_ids");
+      completedMap = saved ? JSON.parse(saved) : {};
+    }
+  
+    function markCompleted(id) {
+      const key = `${currentCategory}:${id}`;
+      completedMap[key] = true;
+      localStorage.setItem("completed_ids", JSON.stringify(completedMap));
+    }
+  
+    function isCompleted(id) {
+      return completedMap[`${currentCategory}:${id}`];
+    }
+  
+    function saveToStorage(entry) {
+      const key = "responses";
+      const saved = localStorage.getItem(key);
+      const data = saved ? JSON.parse(saved) : [];
+      data.push(entry);
+      localStorage.setItem(key, JSON.stringify(data));
+    }
+  
+    function downloadResults() {
+      const saved = localStorage.getItem("responses");
+      if (!saved) return alert("还没有任何标注结果！");
+      const user = JSON.parse(localStorage.getItem("user_info") || "{}");
+      const fields = [
+        user.gender || "unknown",
+        user.school || "unknown",
+        user.degree || "unknown",
+        user.region || "unknown"
+      ];
+      const timestamp = new Date().toISOString().slice(0,10).replace(/-/g,"");
+      const filename = `annotated_results_${fields.join("_")}_${timestamp}.json`.replace(/\s+/g, "_");
+      const blob = new Blob([saved], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = filename;
+      a.click();
+    }
+
+    window.onload = () => {
+      loadCompletedFromStorage();
+      const u = localStorage.getItem("user_info");
+      if (u) userInfo = JSON.parse(u);
+    };
+  </script>
+  </body>
+  </html>
+  
