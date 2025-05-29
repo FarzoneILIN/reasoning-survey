@@ -1,0 +1,134 @@
+[
+  {
+    "id": 5,
+    "question": "实验中出现低限效应的原因是?",
+    "A": "任务中等困难",
+    "B": "任务过于困难",
+    "C": "练习交数不够",
+    "D": "任务过于容易",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 35,
+    "question": "当自变量的确造成了因变量的变化,而不是其他的因素造成了因变量的变化,我们就说这种因变量是?",
+    "A": "可靠的",
+    "B": "有效的",
+    "C": "敏感的",
+    "D": "有信度的",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 91,
+    "question": "对于短时记忆遗忘的原因有两种观点,主张遗忘是信息的自然衰退,时间是遗忘原因的心理学家是?",
+    "A": "艾宾浩斯",
+    "B": "斯波灵",
+    "C": "彼得森",
+    "D": "凯佩尔",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 104,
+    "question": "在一个单因素3水平的组内实验设计中,发现主效应显著,如何进行进一步分析?",
+    "A": "进行重复测量的多重比较",
+    "B": "单效应分析",
+    "C": "进行T检验",
+    "D": "进行协方差分析",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 116,
+    "question": "影响实验内部效度的被试因素有?",
+    "A": "评价忧虑",
+    "B": "期望效应",
+    "C": "投射效应",
+    "D": "刻板效应",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 121,
+    "question": "以下哪项是影响实验外部效度的因素?",
+    "A": "主试—被试间的相互作用",
+    "B": "被试样本缺乏代表性",
+    "C": "统计回归",
+    "D": "个体本身的生长和成熟",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 146,
+    "question": "对暗适应产生的原因是?",
+    "A": "视杆细胞的视紫红质被分解",
+    "B": "视杆细胞的视紫红质合成增多",
+    "C": "视锥细胞的视紫红质被分解",
+    "D": "视锥细胞的视紫红质合成增多",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 154,
+    "question": "在研究的某一时期内或特定时间点上发生的各种社会事件都可能影响被试的行为，从而混淆实验处理的效果。这种影响研究内部效度的因素属于?",
+    "A": "历史因素",
+    "B": "成熟因素",
+    "C": "统计回归效应",
+    "D": "统计回归效应",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 222,
+    "question": "在2×3的实验设计中，研究的因素有?",
+    "A": "2个",
+    "B": "3个",
+    "C": "5个",
+    "D": "6个",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 224,
+    "question": "在心理学实验中，要求特征（demand characteristics）是影响实验效果的因素之一。反映要求特征的典型例子是?",
+    "A": "Stroop效应",
+    "B": "练习效应",
+    "C": "霍桑效应",
+    "D": "序列效应",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 245,
+    "question": "在研究的某一时期内或特定时间点上发生的各种社会事件都可能影响被试的行为，从而混淆实验处理的效果。这种影响研究内部效度的因素属于?",
+    "A": "历史因素",
+    "B": "成熟因素",
+    "C": "统计回归效应",
+    "D": "研究变量与被试特点的交互作用",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 288,
+    "question": "在用相关的方法研究儿童的言语获得时发现,和儿童言语能力不相关的家庭环境因素有?",
+    "A": "儿童母系的复杂关系",
+    "B": "母亲的情绪和言语影响",
+    "C": "适当的玩具及其有效性",
+    "D": "儿童是否处在隔离状态",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  }
+]

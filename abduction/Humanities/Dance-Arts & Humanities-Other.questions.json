@@ -1,0 +1,200 @@
+[
+  {
+    "id": 61,
+    "question": "在《舞蹈知识手册》这部著作中,将欧洲古典芭蕾舞衰落的主观原因归结了四点,下列哪一种是原因之一?",
+    "A": "热衷于程式化的手势描述和技巧的炫耀",
+    "B": "表演范围过与狭小",
+    "C": "当时人们的欣赏水平太低",
+    "D": "热衷于华丽的舞台背景的展示",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 69,
+    "question": "有些民间舞蹈形式在南方、北方的叫法不同,比如在北方被称为“霸王鞭”的民间舞蹈样式,在南方称为什么?",
+    "A": "踩高跷",
+    "B": "跑旱船",
+    "C": "采莲船",
+    "D": "打连厢",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 73,
+    "question": "有些民间舞蹈形式在南方、北方的叫法不同,比如在北方被称“跑旱船”的民间舞蹈样式,在南方称为什么?",
+    "A": "霸王鞭",
+    "B": "打连厢",
+    "C": "采莲船",
+    "D": "踩高跷",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 100,
+    "question": "安徽花鼓灯的体态特征为什么?",
+    "A": "曲线",
+    "B": "弧线上提",
+    "C": "直线",
+    "D": "三道弯",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 104,
+    "question": "在安徽花鼓灯的表演当中,不满14岁的小姑娘称为什么?",
+    "A": "大兰花",
+    "B": "小嫚",
+    "C": "小兰花",
+    "D": "翠花",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 107,
+    "question": "安徽花鼓灯中将女性角色统称为什么?",
+    "A": "兰花",
+    "B": "包头",
+    "C": "小嫚",
+    "D": "翠花",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 110,
+    "question": "安徽花鼓灯中将男性角色统称为什么?",
+    "A": "挂鼓子",
+    "B": "下装",
+    "C": "鼓架子",
+    "D": "小嫚",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 112,
+    "question": "安徽当地的艺人将“跳花鼓灯”称为什么?",
+    "A": "扭秧歌",
+    "B": "玩灯",
+    "C": "跑大场",
+    "D": "嫚",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 141,
+    "question": "东北秧歌当中男性角色统称为什么?",
+    "A": "挂鼓子",
+    "B": "鼓架子",
+    "C": "下装",
+    "D": "小嫚",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 170,
+    "question": "民间舞蹈的传承发展有三个主要因素,下列哪个选项是其发展因素之一?",
+    "A": "主要反映了一定历史时期的经济文化",
+    "B": "重要的是随着社会的发展而不断的注入新的成分",
+    "C": "既反映一定的历史时期的经济文化背景,又随着社会的发展而注入新的成分",
+    "D": "主要反映了一定历史时期的百姓生活活动。",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 180,
+    "question": "民间舞蹈的传承发展有三个主要因素,下列哪个选项是其发展因素之一?",
+    "A": "和人们的劳动生活、传统观念、民俗活动紧密结合",
+    "B": "只和人们的劳动生活紧密结合",
+    "C": "只和人们的传统观念紧密结合。",
+    "D": "只和人们的民俗活动紧密结合",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 181,
+    "question": "民间舞蹈的传承发展有三个主要因素,下列哪个选项是其发展因素之一?",
+    "A": "具有鲜明的民族风格",
+    "B": "具有鲜明的民族风格和地域色彩",
+    "C": "具有鲜明的中原地域的色彩",
+    "D": "具有鲜明的西南地域的色彩",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 210,
+    "question": "下列选项中,哪一文化因素是在藏族舞蹈民间舞蹈中保存着的?",
+    "A": "农耕文化型的“艮”",
+    "B": "舞蹈的宗教色彩与“羌姆”",
+    "C": "舞蹈中祭祀玛祖的色彩",
+    "D": "舞蹈中的海洋文化色彩",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 212,
+    "question": "下列选项中,哪一文化因素是在藏族舞蹈民间舞蹈中保存着的?",
+    "A": "“一顺边”的审美特征",
+    "B": "“交叉”的审美特征",
+    "C": "“踢踏”的审美特征",
+    "D": "农耕文化型的“艮”",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 214,
+    "question": "下列选项中,哪一文化因素是在藏族舞蹈民间舞蹈中保存着的?",
+    "A": "农耕文化型的“艮”",
+    "B": "“交叉”的审美特征",
+    "C": "农牧文化的型的“卓”",
+    "D": "绿洲问化的“古格里”",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 235,
+    "question": "下列选项中,哪一文化因素是在藏族民间舞蹈中保存着的?",
+    "A": "海洋文化的色彩",
+    "B": "中原文化的色彩",
+    "C": "农牧文化的色彩",
+    "D": "江南文化的色彩",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 238,
+    "question": "下列选项中,哪一文化因素是在藏族民间舞蹈中保存着的?",
+    "A": "舞蹈中祭祀妈祖的色彩",
+    "B": "舞蹈的宗教色彩与“羌姆”",
+    "C": "舞蹈中的海洋文化色彩",
+    "D": "舞蹈中的江南文化色彩",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 272,
+    "question": "东北秧歌当中女性角色统称为什么?",
+    "A": "兰花",
+    "B": "包头",
+    "C": "上装",
+    "D": "小嫚",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  }
+]

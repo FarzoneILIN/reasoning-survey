@@ -1,0 +1,68 @@
+[
+  {
+    "id": 26,
+    "question": "在定点数运算中产生溢出的原因是______?",
+    "A": "运算过程中最高位产生了进位或借位",
+    "B": "参加运算的操作数超过了机器的表示范围",
+    "C": "运算的结果的操作数超过了机器的表示范围",
+    "D": "寄存器的位数太少，不得不舍弃最低有效位",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "computer"
+  },
+  {
+    "id": 126,
+    "question": "同步传输之所以比异步传输具有较高的传输频率是因为同步传输______?",
+    "A": "不需要应答信号 ；",
+    "B": "总线长度较短 ；",
+    "C": "用一个公共时钟信号进行同步 ；",
+    "D": "各部件存取时间较为接近 ；",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "computer"
+  },
+  {
+    "id": 172,
+    "question": "双端口存储器所以能高速进行读写，是因为采用______?",
+    "A": "高速芯片",
+    "B": "两套相互独立的读写电路",
+    "C": "流水技术",
+    "D": "新型器件",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "computer"
+  },
+  {
+    "id": 271,
+    "question": "双端口存储器所以能进行高速读/写操作，是因为采用______?",
+    "A": "高速芯片",
+    "B": "新型器件",
+    "C": "流水技术",
+    "D": "两套相互独立的读写电路",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "computer"
+  },
+  {
+    "id": 279,
+    "question": "进程从运行状态转入就绪状态的可能原因是______?",
+    "A": "被选中占有处理机时间",
+    "B": "等待某一事件发生",
+    "C": "等待的事件已发生",
+    "D": "时间片已用完",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "computer"
+  },
+  {
+    "id": 291,
+    "question": "IEEE1394所以能实现数据传送的实时性，是因为______?",
+    "A": "除异步传送外，还提供同步传送方式",
+    "B": "提高了时钟频率",
+    "C": "除优先权仲裁外，还提供均等仲裁,紧急仲裁两种总线仲裁方式",
+    "D": "能够进行热插拔",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "computer"
+  }
+]

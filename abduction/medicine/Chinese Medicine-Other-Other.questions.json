@@ -1,0 +1,68 @@
+[
+  {
+    "id": 55,
+    "question": "与情志抑郁最为关联的原因是?",
+    "A": "心神不足",
+    "B": "髓海空虚",
+    "C": "肝失疏泄",
+    "D": "肝升太过",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 90,
+    "question": "“心为五脏六腑之大主”,是因为?",
+    "A": "心主血脉",
+    "B": "心主神志",
+    "C": "心脉相连",
+    "D": "心为阳脏",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 153,
+    "question": "疾病发生的内在因素是?",
+    "A": "邪气强盛",
+    "B": "正气不足",
+    "C": "邪胜正负",
+    "D": "正胜邪衰",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 166,
+    "question": "导致津液输布障碍,水湿痰饮内的最主要因素是?",
+    "A": "肺的宣发肃降失职",
+    "B": "脾的运化功能失健",
+    "C": "肝的疏泄功能失常",
+    "D": "肾的主水功能失调",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 176,
+    "question": "形成面色黄的原因主要是?",
+    "A": "阴寒内盛",
+    "B": "脾虚湿蕴",
+    "C": "心肺气虚",
+    "D": "肾虚亏损",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 261,
+    "question": "下列哪项不是导致虚证的常见原因?",
+    "A": "先天禀赋不足",
+    "B": "病中耗损过多",
+    "C": "房事劳倦太过",
+    "D": "情志失于调摄",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  }
+]

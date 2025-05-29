@@ -1,0 +1,46 @@
+[
+  {
+    "id": 202,
+    "question": "近年来，一些教育研究者开始关注教育活动过程的动态生成、非线性特征及其中潜在的、无序的和偶然的因素这种发展方向体现了教育研究的_______?",
+    "A": "经验-分析范式",
+    "B": "社会批判范式",
+    "C": "诠释-理解范式",
+    "D": "复杂思想范式",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 229,
+    "question": "归纳分析是定性分析的主要方法之一在其他条件不变的情况下，如果某一现象_______发生一定程度的变化，另一现象_______也随之发生一定程度的变化，那么前一现象X就可能是另一现象Y的原因这种归纳分析的方法是_______?",
+    "A": "求同法",
+    "B": "求异法",
+    "C": "共变法",
+    "D": "剩余法",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 278,
+    "question": "在教学方法实验中，下列无关因素中，可不必加以控制的是_______?",
+    "A": "教师的业务水平",
+    "B": "儿童的基础水平",
+    "C": "儿童课外受到辅导的机会",
+    "D": "师生的心情",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 298,
+    "question": "在教学方法实验中，下列无关因素中可不必加以控制的是_______?",
+    "A": "教师的业务水平",
+    "B": "儿童的基础水平",
+    "C": "儿童课外受到辅导的机会",
+    "D": "师生的心情",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  }
+]

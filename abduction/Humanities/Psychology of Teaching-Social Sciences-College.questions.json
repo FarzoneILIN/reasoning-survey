@@ -1,0 +1,156 @@
+[
+  {
+    "id": 20,
+    "question": "二因素说认为品德构成的要素是道德行为和？",
+    "A": "道德认识",
+    "B": "道德意识",
+    "C": "道德意志",
+    "D": "道德情感",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 33,
+    "question": "赫茨伯格的双因素理论指出激发动机的二个因素是？",
+    "A": "认知因素与情感因素",
+    "B": "主观因素与客观因素",
+    "C": "认知因素与意志因素",
+    "D": "保健因素与激励因素",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 38,
+    "question": "大学校园文化形成与发展的首要影响因素是？",
+    "A": "学校的领导与管理活动",
+    "B": "学校的宣传与舆论引导",
+    "C": "社会文化的渗透与制约",
+    "D": "新闻媒体的宣传与大众印象",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 62,
+    "question": "双因素理论的提出者是？",
+    "A": "马斯洛",
+    "B": "赫茨伯格",
+    "C": "弗鲁姆",
+    "D": "亚当斯",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 90,
+    "question": "“辛亥革命失败的原因”、“光合作用的过程”是哪种形态的陈述性知识？",
+    "A": "有关事物名称或符号的知识",
+    "B": "有关简单命题性知识或事实性知识",
+    "C": "有多个命题构成的组合性知识",
+    "D": "获得性知识",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 93,
+    "question": "公平理论指出，员工的积极性能否调动，会受到哪些因素的影响?",
+    "A": "绝对报酬与相对报酬",
+    "B": "实际值与期望值",
+    "C": "效益与收入",
+    "D": "情感管理与提供舞台",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 110,
+    "question": "弗鲁姆提出的期望理论指出，激发力量主要是由以下二因素组成？",
+    "A": "保健因素与激励因素",
+    "B": "主观因素与客观因素",
+    "C": "认知因素与情感因素",
+    "D": "目标效价与期望值",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 178,
+    "question": "个体根据外在的信息和线索来对自己或他人的内在状态或行为原因进行解释及推测的过程是？",
+    "A": "归因",
+    "B": "印象",
+    "C": "自我认知",
+    "D": "态度",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 182,
+    "question": "将学业成功或失败归因于个人外部的稳定因素，指的是？",
+    "A": "能力",
+    "B": "努力",
+    "C": "任务难度",
+    "D": "运气",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 207,
+    "question": "产生态度和行为不一致的原因，除了可以归之于__及调查等方法问题外，还由于从态度到具体的行为之间存在着各种中介因素，主要包括：①个体心理、人格因素。②社会的环境因素。这两类因素往往共同起作用。",
+    "A": "物质文化",
+    "B": "精神文化",
+    "C": "态度测定",
+    "D": "制度文化",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 213,
+    "question": "公平理论指出，员工的积极性能否调动，会受到以下因素的影响？",
+    "A": "绝对报酬与相对报酬",
+    "B": "实际值与期望值",
+    "C": "效益与收入",
+    "D": "情感管理与提供舞台",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 221,
+    "question": "对变态心理发生的原因和机制有多种探索途径。由于理论观点和研究方法不同，对变态心理的认识也不尽一致。在变态心理学的发展进程中，曾出现过不少试图解释各种病态心理或行为的变态？。",
+    "A": "奥尔波特",
+    "B": "氏心理模式",
+    "C": "吉尔福特",
+    "D": "艾森克",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 234,
+    "question": "引起大学生情绪困扰的客观因素是？",
+    "A": "不能正确地评价自我",
+    "B": "性和恋爱引起的情绪波动",
+    "C": "社会环境的影响",
+    "D": "依赖性与自主性的矛盾",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 245,
+    "question": "我们总是看了下一朵烟花就忘了上一朵的样子，这是因为我们对烟花的记忆是？",
+    "A": "动作记忆",
+    "B": "瞬间记忆",
+    "C": "情绪记忆",
+    "D": "无意记忆",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  }
+]

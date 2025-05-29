@@ -1,0 +1,101 @@
+[
+  {
+    "id": 17,
+    "question": "在法的概念问题上，观点纷纭驳杂的原因是？",
+    "A": "时空的局限性和方法上的片面性",
+    "B": "社会制度的限制和理论方面上的欠缺",
+    "C": "统治阶级思想的影响",
+    "D": "社会科学发展的局限性",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 25,
+    "question": "人类社会关系的最基本的因素是？",
+    "A": "利益关系",
+    "B": "友情关系",
+    "C": "公平关系",
+    "D": "正义",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 28,
+    "question": "利益从一般利益转化为法律利益的主要和直接原因是？",
+    "A": "一般利益太宽泛，不易界定",
+    "B": "法律调整范围有限",
+    "C": "各种利益之间的矛盾和冲突需要法予以调节和处理",
+    "D": "各种利益有密切联系",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 52,
+    "question": "法产生的根本原因是？",
+    "A": "人类社会的形成",
+    "B": "商品经济的产生",
+    "C": "阶级的出现",
+    "D": "国家的产生",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 54,
+    "question": "法更替的根本原因是？",
+    "A": "生产力的发展",
+    "B": "生产关系的推动",
+    "C": "国家的更替",
+    "D": "社会基本矛盾的运动",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 197,
+    "question": "制约法律关系主体的种类和范围的重要因素是？",
+    "A": "生产关系和国家政权的性质",
+    "B": "生产关系和国家经济制度",
+    "C": "国家政治体制和国家政权的性质",
+    "D": "国家政治体制和国家经济制度",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 207,
+    "question": "就法律事实而言，能够引起法律关系发生、变更和消灭的更经常和更主要的因素是？",
+    "A": "行为",
+    "B": "事件",
+    "C": "绝对事件",
+    "D": "相对事件",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 288,
+    "question": "古希腊人虽然提出了法治思想，却并没有完全实现法治理想的主要原因是？",
+    "A": "当时的法律不完善",
+    "B": "当时社会民主程度不高",
+    "C": "当时社会没有发展出一个法律职业阶层",
+    "D": "当时社会政治体制不完善",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 330,
+    "question": "法学家可以在法律监督中发挥特殊作用的原因不包括？",
+    "A": "与一般公众相比，法学家有更为强烈的追求法治和社会公正的意识，热切关注司法与执法，以其敏锐的观察力监督法律的实施",
+    "B": "法学家的职业特点和特殊的知识结构，使其具有较强的法律监督能力",
+    "C": "法学家的监督具有因其超脱地位而带来的更强的客观性和说服力",
+    "D": "法学家与一般公众相比，其权威性较强",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  }
+]

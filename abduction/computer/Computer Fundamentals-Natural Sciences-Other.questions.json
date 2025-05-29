@@ -1,0 +1,13 @@
+[
+  {
+    "id": 0,
+    "question": "在Word中，李老师对《学期成绩分析报告》进行排版，他希望将所选定的成绩分析原因关键字添加下划线效果，可按键？",
+    "A": "Shift+U",
+    "B": "Ctrl+I",
+    "C": "Ctrl+U",
+    "D": "Ctrl+B",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "computer"
+  }
+]

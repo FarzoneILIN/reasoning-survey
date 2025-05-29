@@ -1,0 +1,79 @@
+[
+  {
+    "id": 70,
+    "question": "影响社会分层的主要因素是?",
+    "A": "社会制度",
+    "B": "社会观念",
+    "C": "社会资源",
+    "D": "社会地位",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 84,
+    "question": "城市化趋势产生的直接原因时?",
+    "A": "工业革命",
+    "B": "农业文明做基础",
+    "C": "城市规模不断扩大",
+    "D": "人口大量向城市集中",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 104,
+    "question": "下列哪一因素不构成社会控制体系的因素?",
+    "A": "控制主体",
+    "B": "控制客体",
+    "C": "控制过程",
+    "D": "控制手段",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 123,
+    "question": "在社会学的研究功能中，回答“为什么”的是?",
+    "A": "描述性功能",
+    "B": "预测性功能",
+    "C": "规范性功能",
+    "D": "解释性功能",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 155,
+    "question": "把越轨行为的原因归结为社会结构各部分间的不整合、不一致,这种越轨行为的理论是?",
+    "A": "社会失范论",
+    "B": "标签论",
+    "C": "亚文化群体论",
+    "D": "手段—目标论",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 179,
+    "question": "认为发达国家是落后国家发展的制约因素,这是____的观点。",
+    "A": "现代化理论",
+    "B": "依附理论",
+    "C": "世界体系论",
+    "D": "新发展观",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 231,
+    "question": "在青年时期,影响人们社会化的主要是因素是?",
+    "A": "学校",
+    "B": "同辈群体",
+    "C": "社区",
+    "D": "工作单位",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  }
+]

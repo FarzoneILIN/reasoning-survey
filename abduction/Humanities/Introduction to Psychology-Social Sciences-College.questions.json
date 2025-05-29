@@ -1,0 +1,134 @@
+[
+  {
+    "id": 71,
+    "question": "小明嚼口香糖玩耍时，不慎将10元纸币掉到狭缝里 几经尝试，自己无法用手将其取出 最后在别人建议下，他用口香糖将其粘出 小明在开始时没有采用这样的方法解决问题，主要的影响因素是_______?",
+    "A": "功能固着",
+    "B": "原型启发",
+    "C": "动机",
+    "D": "知识的表征",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 131,
+    "question": "(UX、人力方向)开车接打电话是导致交通安全事故的主要因素，其可能原因是_______?",
+    "A": "占用了有意识的认知资源",
+    "B": "占用了无意识的认知资源",
+    "C": "提高了驾驶的难度",
+    "D": "使驾驶人员的直觉变迟钝了",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 137,
+    "question": "“孩子为什么不爱学习？”，精神分析学派会关注_______   ?",
+    "A": "孩子在发展的早期发生了什么创伤事件影响了他现在的行为",
+    "B": "孩子是怎样看待学习成绩的，是否对自己有过低的评价或对学习结果的归因方式有偏差",
+    "C": "这个行为的强化模式是什么？在他成长的过程中影响他学习的环境中存在什么强化模式",
+    "D": "每个孩子都有发挥自己潜能的愿望，孩子的自主性有没有得到很好的发挥，如何激发孩子的学习自主性",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 159,
+    "question": "按照心理学中对生理基础和非生理基础的行为产生的原因的划分，可以将动机分为_______   ?",
+    "A": "生理性动机和心理性动机",
+    "B": "内在动机和外在动机",
+    "C": "有意识动机和无意识动机",
+    "D": "原始动机和习得动机",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 161,
+    "question": "韦纳在自我归因论总结出的六项因素中，属于内在且稳定的因素是_______   ?",
+    "A": "他人支持",
+    "B": "能力禀赋",
+    "C": "个人努力",
+    "D": "任务难度",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 170,
+    "question": "考试成绩好，解释为我努力的结果或者是这次题目不难，这个试图解释的行为叫归因，归于内部原因还是外面原因，就称为_______   ?",
+    "A": "自信心",
+    "B": "控制点",
+    "C": "参照点",
+    "D": "自控力",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 176,
+    "question": "影响嫉妒心理产生的因素不包括_______   ?",
+    "A": "环境的公平性",
+    "B": "智商",
+    "C": "自尊",
+    "D": "与比较对象的相似性",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 234,
+    "question": "创造力的核心因素是_______?",
+    "A": "创造意识",
+    "B": "创造想象",
+    "C": "创造性思维",
+    "D": "创造性人格",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 258,
+    "question": "下列属于影响迁移的个人因素有?",
+    "A": "认知结构和态度",
+    "B": "学习环境",
+    "C": "年龄和学习材料",
+    "D": "学习目标和态度",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 276,
+    "question": "相比远处的物体，视网膜上近处的物体移动得更快是因为_______?",
+    "A": "汇聚",
+    "B": "运动视差",
+    "C": "纹理梯度",
+    "D": "旋转的眼球震动",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 287,
+    "question": "知觉的对象能够从背景中分离出来，是因为_______?",
+    "A": "知觉的整体属性",
+    "B": "知觉的个别属性",
+    "C": "注意的选择性",
+    "D": "感觉的感受性",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 290,
+    "question": "快速呈现“人氏日报”，被试错误地将其看作“人民日报”，这主要是因为_______?",
+    "A": "数据驱动加工",
+    "B": "概念驱动加工",
+    "C": "序列加工",
+    "D": "并行加工",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  }
+]

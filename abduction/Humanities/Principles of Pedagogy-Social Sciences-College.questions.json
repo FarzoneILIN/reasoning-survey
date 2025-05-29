@@ -1,0 +1,101 @@
+[
+  {
+    "id": 26,
+    "question": "引起并决定教育发展变化的最根本、最内在的因素是?",
+    "A": "社会生产力",
+    "B": "文化传统",
+    "C": "社会制度",
+    "D": "科技水平",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 27,
+    "question": "教师在教育过程中要做到循序渐进,这是因为?",
+    "A": "学生只有机械记忆的能力",
+    "B": "教师的知识能力是不一样的",
+    "C": "教育活动中要遵循人的身心发展的一般规律",
+    "D": "教育活动完全受到人的遗传素质的制约",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 48,
+    "question": "人发展的生物学前提是哪个因素?",
+    "A": "环境",
+    "B": "姓名",
+    "C": "遗传",
+    "D": "学校",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 95,
+    "question": "不是影响人发展的主要因素的是?",
+    "A": "遗传因素",
+    "B": "环境因素",
+    "C": "活动",
+    "D": "家庭经济",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 167,
+    "question": "教育受一定社会的生产力与生产关系发展水平的制约,同时也受社会文化传统和人口等其他社会因素的制约。这说明教育具有?",
+    "A": "生产性",
+    "B": "历史性",
+    "C": "阶级性",
+    "D": "社会制约性",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 168,
+    "question": "在制约教育活动的各种因素中,决定教育领导权的因素是?",
+    "A": "经济制度",
+    "B": "政治制度",
+    "C": "人口制度",
+    "D": "文化制度",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 197,
+    "question": "在现代社会中,影响一个国家盛衰强弱的关键因素是?",
+    "A": "科技",
+    "B": "经济",
+    "C": "综合国力",
+    "D": "教育",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 204,
+    "question": "为什么有的人“出淤泥而不染”,为何生长在同一家庭的兄弟姐妹人品不一,为什么名师不一定出高徒,的说法属于以下哪种环境?",
+    "A": "社会物质环境",
+    "B": "人际关系环境",
+    "C": "文化环境",
+    "D": "政治环境",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 211,
+    "question": "决定教育性质的因素中?",
+    "A": "生产力的发展水平",
+    "B": "政治经济制度",
+    "C": "社会文化类型",
+    "D": "社会文化观念",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "id": 74,
+    "question": "彼得一世改革的主要原因是?",
+    "A": "普及教育",
+    "B": "军事政治扩张的需求",
+    "C": "传播科学知识",
+    "D": "增强专业技能",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 224,
+    "question": "阿拉伯文化教育迅速取得伟大成就的原因主要是?",
+    "A": "推行开明的文化教育政策",
+    "B": "文化教育设施完善",
+    "C": "保存和传播古希腊、罗马文化",
+    "D": "教学内容的改革",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  }
+]

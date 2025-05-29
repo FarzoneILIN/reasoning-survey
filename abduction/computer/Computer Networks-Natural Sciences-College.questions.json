@@ -1,0 +1,57 @@
+[
+  {
+    "id": 10,
+    "question": "若路由器R因为拥塞丢弃IP分组，则此时R可向发出该IP分组的源主机发送的ICMP报文类型是？",
+    "A": "路由重定向",
+    "B": "目的不可达",
+    "C": "源抑制",
+    "D": "超时",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "computer"
+  },
+  {
+    "id": 81,
+    "question": "令牌环网中某个站点能发送帧是因为？",
+    "A": "最先提出申请",
+    "B": "优先级最高",
+    "C": "令牌到达",
+    "D": "可随机发送",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "computer"
+  },
+  {
+    "id": 194,
+    "question": "在数字通信中广泛采用CRC循环冗余码的原因是CRC可以？",
+    "A": "检测出一位差错",
+    "B": "检测并纠正一位差错",
+    "C": "检测出多位突发性差错",
+    "D": "检测并纠正多位突发性差错",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "computer"
+  },
+  {
+    "id": 248,
+    "question": "在windows 控制台窗口命令行中使用telnet 202.113.248.173命令时，显示“不是内部或外部命令”是什么原因？",
+    "A": "未使用管理员身份运行",
+    "B": "未安装telnet客户端组件",
+    "C": "命令错误",
+    "D": "以上都不对",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "computer"
+  },
+  {
+    "id": 269,
+    "question": "计算机在局域网络上的硬件地址也可以称为MAC地址，这是因为？",
+    "A": "硬件地址是传输数据时，在传输媒介访问控制层用到的地址",
+    "B": "它是物理地址，MAC是IP地址的简称",
+    "C": "它是物理层地址，MAC是物理层的简称",
+    "D": "它是链路层地址，MAC是链路层的简称",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "computer"
+  }
+]

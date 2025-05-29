@@ -1,0 +1,112 @@
+[
+  {
+    "id": 14,
+    "question": "据史料记载，隋唐时“民间佛经多于六经数十百倍”，造成这一现象的原因是?  ①统治者推崇佛教  ②佛经浅显易懂  ③雕版印刷佛经  ④人们盼望安?",
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "①②③④",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 72,
+    "question": "义和团运动排外思想产生的根本原因是?",
+    "A": "帝国主义的疯狂侵略",
+    "B": "国内社会的困苦局面",
+    "C": "外来势力造成经济的崩溃",
+    "D": "农民阶级的属性和文化上的愚昧落后",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 94,
+    "question": "酿成“土木之变”惨剧的重要原因是宦官?权?",
+    "A": "汪直",
+    "B": "王振",
+    "C": "刘瑾",
+    "D": "刘瑾",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 109,
+    "question": "30年代，美国政府对一系列国际问题执行中立政策，最主要的原因是?",
+    "A": "军事政治实力不及英法",
+    "B": "和平主义和孤立主义盛行",
+    "C": "着手应付经济危机",
+    "D": "以图避战自保",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 136,
+    "question": "国共十年对峙期间，“边界红旗始终不倒”的主要原因是?",
+    "A": "共产国际的支持和帮助",
+    "B": "地处敌人空隙，有回旋的余地",
+    "C": "坚持了“工农武装割据”的思想",
+    "D": "敌人忙于混战，无力围剿",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 193,
+    "question": "全球经济一体化趋势加强主要是因为?",
+    "A": "现代科学技术的发展",
+    "B": "经济区域集团化趋势减弱",
+    "C": "世界形势出现和平稳定局面",
+    "D": "发达国家与发展中国家的经济差距缩小",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 231,
+    "question": "1946年，国民党政府与美国签订的《中美友好通商航海条约》被国人称为“新二十一条”，主要是因为(?",
+    "A": "其内容与“二十一条”相似",
+    "B": "直接导致国统区经济崩溃",
+    "C": "美国从中攫取了各种特权",
+    "D": "有利于美国独霸中国",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 237,
+    "question": "清末新政未能挽救清朝灭亡命运的根本原因是(?",
+    "A": "“新政”只是一场骗局，并没有真正的实现",
+    "B": "清政府借“新政”之名增加税收，引起反抗",
+    "C": "列强反对中国实行“新政”，制造障碍",
+    "D": "“新政”不能解决当时的各种社会矛盾",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 246,
+    "question": "一战后，英国拒绝加入法国的安全保障体系，其原因是?",
+    "A": "认为德国已无力与法国抗衡",
+    "B": "不愿意法国势力在欧洲大陆过分膨胀",
+    "C": "反对改变站前德国的领土状况",
+    "D": "奉行不结盟的中立政策",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 268,
+    "question": "文艺复兴运动发源于意大利的根本原因是(?",
+    "A": "资本主义生产关系的萌芽最早在意大利产生",
+    "B": "意大利保留了古代丰富的文化遗产",
+    "C": "意大利城市经济繁荣，聚集了众多的博学之才",
+    "D": "意大利的分裂状态使天主教会无法控制",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  }
+]

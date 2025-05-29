@@ -1,0 +1,211 @@
+[
+  {
+    "id": 28,
+    "question": "重视社会因素、人际关系对人格发展的影响的心理学家是?",
+    "A": "皮亚杰",
+    "B": "弗洛伊德",
+    "C": "埃里克森",
+    "D": "科尔伯格",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 54,
+    "question": "学生对学习结果归因为“能力”,它是?",
+    "A": "内部、不可控、稳定的因素",
+    "B": "外部、不可控、不稳定的因素",
+    "C": "内部、不可控、不稳定的因素",
+    "D": "外部、不可控、稳定的因素",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 55,
+    "question": "学生对学习结果归因为“运气”,它是?",
+    "A": "内部、不可控、稳定的因素",
+    "B": "外部、不可控、不稳定的因素",
+    "C": "内部、不可控、不稳定的因素",
+    "D": "外部、不可控、稳定的因素",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 56,
+    "question": "学生对学习结果归因为“老师评分不公平”,它是?",
+    "A": "内部、不可控、稳定的因素",
+    "B": "外部、不可控、不稳定的因素",
+    "C": "内部、不可控、不稳定的因素",
+    "D": "外部、不可控、稳定的因素",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 57,
+    "question": "“学生不喜欢学习是因为其先前的学习行为没有受到强化或是因为受到了惩罚所致”,这一观点最能体现的是?",
+    "A": "成就动机理论",
+    "B": "行为主义理论",
+    "C": "归因理论",
+    "D": "自我效能感理论",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 58,
+    "question": "“学生学习动机低下是因为他,她,不相信自己能胜任学习这一任务”,这一观点最能体现的是?",
+    "A": "成就动机理论",
+    "B": "行为主义理论",
+    "C": "需要层次理论",
+    "D": "自我效能感理论",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 63,
+    "question": "对学生自我效能感影响最大的因素是?",
+    "A": "个人的成功或失败的经验",
+    "B": "他人成功或失败的经验",
+    "C": "个体的身心状态",
+    "D": "个人的知识水平",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 64,
+    "question": "根据自我价值感理论,有些学生不愿意努力学习是因为?",
+    "A": "习得了无助感",
+    "B": "回避失败以维持自我价值",
+    "C": "害怕困难",
+    "D": "自我效能感低",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 105,
+    "question": "影响小学生性格发展的最直接的因素是?",
+    "A": "家庭教育方式",
+    "B": "家庭收入情况",
+    "C": "家庭居住环境",
+    "D": "家庭文化背景",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 123,
+    "question": "一般而言,把学习成败归因于何种因素对学习动机的激励作用最大?",
+    "A": "努力程度",
+    "B": "能力高低",
+    "C": "任务难度",
+    "D": "运气好坏",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 156,
+    "question": "影响小学生性格发展的最直接因素是?",
+    "A": "同伴关系",
+    "B": "教师的教育方式",
+    "C": "家庭教育方式",
+    "D": "儿童的自我意识",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 157,
+    "question": "根据Selman的角色采择理论____的儿童开始意识到他人有不同的观点,但不能理解这种差异的原因。",
+    "A": "6—8岁",
+    "B": "8—10岁",
+    "C": "10—12岁",
+    "D": "12—15岁以上",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 174,
+    "question": "根据动机的归因理论，在能力高低、努力程度和身心状态三种因素中，属于可控的内在因素是？",
+    "A": "能力高低",
+    "B": "努力程度",
+    "C": "身心状态",
+    "D": "以上均不是",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 184,
+    "question": "影响小学生性格发展的最直接因素是？",
+    "A": "家庭教育方式",
+    "B": "学校教育环境",
+    "C": "同伴关系",
+    "D": "大众传媒",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 211,
+    "question": "影响小学生性格发展的最直接因素是?",
+    "A": "家庭教育方式",
+    "B": "学校教育环境",
+    "C": "同伴关系",
+    "D": "大众传媒",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 229,
+    "question": "根据动机的归因理论,属于可控的内在因素是?",
+    "A": "能力高低",
+    "B": "身心状态",
+    "C": "努力程度",
+    "D": "任务难易",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 230,
+    "question": "影响教学监控能力的因素中,教师自身因素不包括?",
+    "A": "动机",
+    "B": "知识、观念",
+    "C": "待遇",
+    "D": "情绪情感",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 231,
+    "question": "现代的认知理论更关心学生的课堂学习,强调何种因素在学习活动中的作用?",
+    "A": "观察",
+    "B": "知觉",
+    "C": "材料的意义",
+    "D": "已有认知结构",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 259,
+    "question": "在教学过程之前,为准确了解每位学生对新的学习内容的准备状态,或者为准确了解学习落后学生困难原因而进行的学习评价,称为?",
+    "A": "过程性学习评价",
+    "B": "形成性学习评价",
+    "C": "终结性学习评价",
+    "D": "诊断性学习评价",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  }
+]

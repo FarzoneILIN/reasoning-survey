@@ -1,0 +1,222 @@
+[
+  {
+    "id": 3,
+    "question": "我国庐山成为夏季的避暑胜地,其主要影响因素是?",
+    "A": "纬度因素",
+    "B": "海陆因素",
+    "C": "地形因素",
+    "D": "洋流因素",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 11,
+    "question": "我们每天看到日月星辰东升西落现象是因为?",
+    "A": "太阳和星星都绕着地球转",
+    "B": "地球自西向东自转",
+    "C": "地球绕太阳自西向东运动",
+    "D": "地球公转时,地轴是倾斜的",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 29,
+    "question": "我国新疆塔里木盆地气候干旱,但同纬度的北京气候比较湿润,主要的影响因素是?",
+    "A": "地形因素",
+    "B": "纬度因素",
+    "C": "海陆因素",
+    "D": "洋流因素",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 37,
+    "question": "新疆的红色瓜果系列特别有名,原因是?",
+    "A": "夏季热量充足、光照强烈",
+    "B": "夏季降水多、日照强",
+    "C": "夏季炎热多雨",
+    "D": "夏季昼夜温差大",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 67,
+    "question": "“人间四月芳菲尽,山寺桃花始盛开”,影响这种现象的自然原因是?",
+    "A": "海陆位置",
+    "B": "纬度位置",
+    "C": "地形因素",
+    "D": "人类活动",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 73,
+    "question": "日本工业分布在太平洋沿岸和濑户内海沿岸的主要原因是?",
+    "A": "领土狭小,人口众多",
+    "B": "这里是火山、地震少发地区",
+    "C": "便于原料的进口和产品的出口",
+    "D": "多山地,地形复杂",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 114,
+    "question": "“大兴安岭,雪花飘飘,长江两岸,柳树发芽,海南岛上,鲜花盛开。”景观差异如此之大的原因是?",
+    "A": "我国跨纬度广",
+    "B": "我国跨经度广",
+    "C": "我国地形复杂",
+    "D": "距海远近不同",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 157,
+    "question": "影响全球气温分布的最主要因素是?",
+    "A": "地形因素",
+    "B": "纬度因素",
+    "C": "海陆因素",
+    "D": "人类活动",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 159,
+    "question": "造成城市热岛效应的主要因素是?",
+    "A": "纬度因素",
+    "B": "人类活动",
+    "C": "海陆因素",
+    "D": "地形因素",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 160,
+    "question": "导致全球气温升高的主要人为原因是?",
+    "A": "大面积的植树造林",
+    "B": "工业生产和生活过程中使用大量的煤、石油等矿物燃料",
+    "C": "家庭电器的大量使用",
+    "D": "农业生产过程中使用大量的化学肥料",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 165,
+    "question": "日本多火山地震,形成的主要原因是?",
+    "A": "位于板块内部",
+    "B": "位于环太平洋火山地震带上",
+    "C": "位于美洲板块火山地震带上",
+    "D": "位于欧亚板块与印度洋板块之间",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 187,
+    "question": "高纬度地区的房屋墙体厚实,室内有壁炉、窗户小而且屋顶大多高耸,原因是?",
+    "A": "炎热多雨",
+    "B": "温暖多雨雪",
+    "C": "温暖干燥",
+    "D": "寒冷多雨雪",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 188,
+    "question": "城市建设向高屋住宅方向发展的原因是?",
+    "A": "登高望远",
+    "B": "提高城市空间利用率",
+    "C": "健身运动",
+    "D": "氧气多灰尘少",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 202,
+    "question": "世界大多数农作物和动植物都能在我国找到适合生长的地区,是因为我国?",
+    "A": "季风气候显著",
+    "B": "气候复杂多样",
+    "C": "夏季普遍高温",
+    "D": "雨热同期",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 215,
+    "question": "新疆瓜果特别甜的原因是?",
+    "A": "气候干旱少雨",
+    "B": "降水丰富,日照强",
+    "C": "白天日照充足,热量丰富,昼夜温差大",
+    "D": "土壤肥沃",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 224,
+    "question": "2012年3月27日20时,日本东北地区发生6.4级地震。日本多地震的主要原因是位于下列哪两个板块交界处?",
+    "A": "美洲板块与太平洋板块",
+    "B": "亚欧板块与印度洋板块",
+    "C": "太平洋板块与印度洋板块",
+    "D": "亚欧板块与太平洋板块",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 237,
+    "question": "我国南极科学考察站的建站时间都选择在1月至2月的主要原因是?",
+    "A": "此时南极最为寒冷,冰层坚硬,地基牢固",
+    "B": "此时是南极的暖季,白昼长",
+    "C": "此时南极冰雪全部融化,地面裸露,方便选址",
+    "D": "此时南极出现极夜现象,风雪小",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 254,
+    "question": "影响我国气候南北差异的主要因素是?",
+    "A": "纬度位置",
+    "B": "海陆位置",
+    "C": "地形",
+    "D": "季风",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 279,
+    "question": "造成北美温带大陆性气候范围广的主要原因是?",
+    "A": "纬度位置",
+    "B": "纬度和地形",
+    "C": "纬度和洋流",
+    "D": "纬度和海陆位置",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 286,
+    "question": "斯堪的纳维亚半岛两侧有许多崖壁陡峭、幽深曲折的峡湾,形成原因是?",
+    "A": "断裂作用而成",
+    "B": "冰川作用而成",
+    "C": "流水侵蚀而成",
+    "D": "海浪侵蚀而成",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  }
+]

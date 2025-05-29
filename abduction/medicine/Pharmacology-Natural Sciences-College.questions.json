@@ -1,0 +1,134 @@
+[
+  {
+    "id": 11,
+    "question": "影响药物效应的因素是?",
+    "A": "年龄与性别",
+    "B": "体表面积",
+    "C": "给药时间",
+    "D": "以上均可能",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 18,
+    "question": "细菌对青霉素类产生耐药性的主要原因是?",
+    "A": "产生水解酶",
+    "B": "产生钝化酶",
+    "C": "改变代谢途径",
+    "D": "改变细胞膜通透性",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 67,
+    "question": "糖皮质激素诱发和加重感染的主要原因为?",
+    "A": "病人对激素不敏感",
+    "B": "激素用量不足",
+    "C": "激素能促使病原微生物生成繁殖",
+    "D": "激素降低了机体对病原微生物的抵抗力",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 76,
+    "question": "甲氧苄啶与磺胺甲恶唑合用的原因是?",
+    "A": "促进吸收",
+    "B": "促进分布",
+    "C": "减慢排泄",
+    "D": "因两药药代动力学相似，发挥协同抗菌作用",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 186,
+    "question": "硫脲类抗甲状腺药起效慢的主要原因是?",
+    "A": "口服后吸收不完全",
+    "B": "肝内代谢转化快",
+    "C": "肾脏排泄速度快",
+    "D": "要待已合成的甲状腺耗竭后才能生效",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 227,
+    "question": "下述哪些因素可诱发强心苷中毒?",
+    "A": "低血钾、低血镁",
+    "B": "高血钙",
+    "C": "心肌缺氧、肾功能减退",
+    "D": "其余选项都是",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 235,
+    "question": "使用奎尼丁治疗心房纤颤常合用强心苷,因为后者能?",
+    "A": "拮抗奎尼丁的血管扩张作用",
+    "B": "拮抗奎尼丁对心脏的抑制作用",
+    "C": "提高奎尼丁的血药浓度",
+    "D": "对抗奎尼丁使心室率加快的作用",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 261,
+    "question": "氨基糖苷类抗生素用于治疗泌尿系感染主要是因为?",
+    "A": "对尿道感染常见的致病菌敏感",
+    "B": "大量原形药物由肾排出",
+    "C": "使肾皮质激素分泌增加",
+    "D": "对肾毒性低",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 269,
+    "question": "氯霉素应用过程应定期查血象因为最易引起?",
+    "A": "血色素下降",
+    "B": "血小板下降",
+    "C": "白细胞下降",
+    "D": "血小板下降",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 274,
+    "question": "治疗流脑首选磺胺嘧啶(SD)是因为?",
+    "A": "对脑膜炎双球菌敏感",
+    "B": "血浆蛋白结合率低",
+    "C": "细菌产生抗药性较慢且对脑膜炎双球菌敏感",
+    "D": "血浆蛋白结合率高",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 286,
+    "question": "大多数弱酸性药和弱碱性药物一样,口服后大部在小肠吸收,这主要是因为?",
+    "A": "都呈最大解离",
+    "B": "都呈最小解离",
+    "C": "小肠血流较其他部位丰富",
+    "D": "吸收面积最大",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 290,
+    "question": "影响局麻作用的因素有哪项是错的?",
+    "A": "组织局部血液",
+    "B": "乙酰胆碱酯酶活性",
+    "C": "应用血管收缩剂",
+    "D": "组织液Ph",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  }
+]

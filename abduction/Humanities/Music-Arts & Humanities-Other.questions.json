@@ -1,0 +1,101 @@
+[
+  {
+    "id": 153,
+    "question": "下列哪首歌因为阿拉坦其其格的演唱和故事闻名于世？",
+    "A": "金色的海洋",
+    "B": "金色的太阳",
+    "C": "金色圣山",
+    "D": "金色圣山",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 206,
+    "question": "下列哪一项不是听众在很多情况下不能正确理解音乐的原因?",
+    "A": "听众音乐素养的限制",
+    "B": "音乐表达的主观性",
+    "C": "音乐表达的模糊性",
+    "D": "音乐表达的不确定性",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 226,
+    "question": "____是一个音乐能够获得张力的最重要因素。",
+    "A": "节奏",
+    "B": "音符间隔",
+    "C": "音强",
+    "D": "期待",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 229,
+    "question": "构成乐感的主要因素是?",
+    "A": "听觉",
+    "B": "习惯",
+    "C": "天赋",
+    "D": "联觉",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 235,
+    "question": "下列哪一个因素是中国的传统音乐中所缺少的?",
+    "A": "节奏",
+    "B": "合音",
+    "C": "乐器",
+    "D": "旋律",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 240,
+    "question": "我们可以接受《黄河》这种类型的音乐,是下列哪一项因素促使的?",
+    "A": "音符",
+    "B": "节奏",
+    "C": "旋律",
+    "D": "表现性",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 259,
+    "question": "对于“激情型”乐句,决定“高潮点”一定不能太弱的原因是?",
+    "A": "求异心理",
+    "B": "惯性期待",
+    "C": "客观规律",
+    "D": "音乐的丰富性要求",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 262,
+    "question": "我们对音乐的审美价值判断受到下列哪一项因素的决定?",
+    "A": "内心的期待感",
+    "B": "理论知识水平",
+    "C": "听众的音乐天赋",
+    "D": "听众的乐感",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 265,
+    "question": "____是一个作品能得到大众一致的评价的心理学原因。",
+    "A": "权威引导性",
+    "B": "社会趋同性",
+    "C": "主体间性",
+    "D": "从众心理",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  }
+]

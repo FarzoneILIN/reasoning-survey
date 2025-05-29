@@ -1,0 +1,156 @@
+[
+  {
+    "id": 3,
+    "question": "9 春秋战国时期。新旧\n制度更替，社会大变革的根本原因是？",
+    "A": "战争频繁",
+    "B": "诸侯争霸",
+    "C": "百家争鸣",
+    "D": "社会生产力发展，铁制农具的广泛使用和牛耕的推广",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 11,
+    "question": "东晋 南北朝时期，江南地区得以开发的最主要原因是?",
+    "A": "北方农民南迁带来的先进技术",
+    "B": "江南统治者调整统治政策",
+    "C": "南方战乱少，社会安定",
+    "D": "南方的自然条件优越",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 13,
+    "question": "赤壁之战中曹军失败的主要原因是?",
+    "A": "孙刘联军拥有长江天堑",
+    "B": "曹军战线长，不习水战遭遇火攻",
+    "C": "曹操兵力不足",
+    "D": "孙刘联军力量强大",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 31,
+    "question": "中国的首都北京曾经被称为什么名字?",
+    "A": "京城",
+    "B": "南京",
+    "C": "西安",
+    "D": "杭州",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 75,
+    "question": "新中国成立后，农民翻了身，成为土地的主人，主要是因为",
+    "A": "完成土地改革",
+    "B": "实现农业合作化",
+    "C": "掀起“大跃进”运动",
+    "D": "发动人民公社化运动",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 125,
+    "question": "林肯成为美国历史上最受人民爱戴的总统之一的最主要原因是他",
+    "A": "扩大了美国领土",
+    "B": "维护了北方资产阶级的利益",
+    "C": "推翻了英国的殖民统治",
+    "D": "解放了黑人奴隶和维护了国家的统一",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 163,
+    "question": "凡尔赛—华盛顿体系形成后，资本主义世界经历了短暂的平静期，经济迅速恢复和发展。下列有关其原因的叙述，正确的是",
+    "A": "凡尔赛—华盛顿体系暂时确立了战后世界新秩序",
+    "B": "第三次科技革命的影响",
+    "C": "各国纷纷加强对经济的干预",
+    "D": "帝国主义国家之间的矛盾消除",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 167,
+    "question": "1932年，某政要指出：“世界近两年正在倒退，各国……采取危机世界和平的猜疑 恐惧和威胁的态度。”出现这一形势的主要原因是",
+    "A": "同盟国和协约国军事对峙",
+    "B": "严重的经济危机波及世界",
+    "C": "亚洲战争策源地形成",
+    "D": "慕尼黑会议割让苏台德",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 174,
+    "question": "中东地区长期以来成为世界列强的必争之地，因为这里拥有丰富的",
+    "A": "石油资源",
+    "B": "煤炭资源",
+    "C": "水电资源",
+    "D": "橡胶资源",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 178,
+    "question": "尼克松上台执政后，在与苏联的争霸中实行战略收缩的主要原因是",
+    "A": "深陷越南战争之中",
+    "B": "西欧和日本的经济冲击",
+    "C": "美国债务负担沉重",
+    "D": "苏联采取积极的进攻战略",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 181,
+    "question": "右图为1870—1970年资本主义国家经济平均增长率变化示意图。促使图中1950—1970年资本主义国家经济快速增长的主要原因是",
+    "A": "第三次科技革命",
+    "B": "“罗斯福新政”的实施",
+    "C": "“冷战的结束”",
+    "D": "欧盟的建立",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 186,
+    "question": "科学技术是推动社会进步的重要因素之一。科技对美国成为霸主有及其重要的推动作用，下列论述不正确的是？",
+    "A": "） 美国人史蒂芬孙发明的火车极大地改变了人们的交流",
+    "B": "莱特兄弟发明的飞机实现了人类飞上蓝天的梦想",
+    "C": "美国人发明的计算机被称为第三次科技革命标志性的成就",
+    "D": "美国充分利用计算机网络技术率先进入新经济时代",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 273,
+    "question": "历史学家钱穆认为，宋代正是因为……才没有重蹈唐末五代覆辙。句中省略号处应该补全的内容是",
+    "A": "发展经济",
+    "B": "减免赋税",
+    "C": "发展海外贸易",
+    "D": "重文轻武",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 277,
+    "question": "中国共产党的成立被称为是“开天辟地的大事”，主要是因为中国革命__\n①有了新的奋斗目标 ②实现了国共两党联合 ③有了新的领导 ④以三民主义为指导",
+    "A": "②③",
+    "B": "①③",
+    "C": "①④",
+    "D": "②④",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  }
+]

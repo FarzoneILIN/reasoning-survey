@@ -1,0 +1,46 @@
+[
+  {
+    "id": 61,
+    "question": "当今时代，________越来越成为民族凝聚力和创造力的重要源泉、越来越成为综合国力竞争的重要因素。",
+    "A": "人才",
+    "B": "科技",
+    "C": "文化",
+    "D": "创新",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 62,
+    "question": "陈毅在《记淮海战役前线见闻》一诗中罗列：“几十万民工走不通，骏马高车送粮食，随军旋转逐西东，前线争立功”，出现这种情景的根本原因是?",
+    "A": "翻身农民踊跃支援前线",
+    "B": "东北全境解放鼓舞人心",
+    "C": "解放军的作战方针正确",
+    "D": "解放区实行了土地改革",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 84,
+    "question": "7月1日，习近平总书记在庆祝中国共产党成立100周年大会上的讲话中指出，中国共产党为什么能，中国特色社会主义为什么好，归根到底是因为?",
+    "A": "中华民族行",
+    "B": "马克思主义好",
+    "C": "马克思主义行",
+    "D": "人民有信仰",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 116,
+    "question": "陈毅在《记淮海战役前线见闻》一诗中罗列：“几十万民工走不通，骏马高车送粮食，随军旋转逐西东，前线争立功”，出现这种情景的根本原因是?",
+    "A": "解放军的作战方针正确",
+    "B": "翻身农民踊跃支援前线",
+    "C": "解放区实行了土地改革",
+    "D": "东北全境解放鼓舞人心",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  }
+]

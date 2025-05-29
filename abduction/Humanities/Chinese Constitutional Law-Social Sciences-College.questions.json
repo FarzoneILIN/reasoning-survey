@@ -1,0 +1,24 @@
+[
+  {
+    "id": 115,
+    "question": "决定国家阶级性质的根本因素是？",
+    "A": "经济制度",
+    "B": "政体",
+    "C": "劳动产品分配方式",
+    "D": "国体",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 327,
+    "question": "各国普遍重视对宪法实施的保障，其根本原因是？",
+    "A": "宪法具有最高的法律效力",
+    "B": "宪法规定了公民的基本权利和义务",
+    "C": "宪法确认、维护统治阶级的根本利益",
+    "D": "宪法有严格的修改程序",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  }
+]

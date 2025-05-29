@@ -1,0 +1,35 @@
+[
+  {
+    "id": 4,
+    "question": "与色彩相关的是____,特别在油画中,它是构成主题思想与意境的重要因素。",
+    "A": "色感",
+    "B": "画面",
+    "C": "色调",
+    "D": "质感",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 8,
+    "question": "北宋末年后,画家开始在画上题诗落款,原因是宋以后的中国画以____为主流。",
+    "A": "文人画",
+    "B": "山水画",
+    "C": "花鸟画",
+    "D": "人物画",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 108,
+    "question": "我们能够在白纸上表现洁白的雪和漆黑的夜晚是因为我们运用了素描的?",
+    "A": "黑白灰对比",
+    "B": "大小对比",
+    "C": "空间对比",
+    "D": "表现技法的对比",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  }
+]

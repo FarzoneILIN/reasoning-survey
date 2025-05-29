@@ -1,0 +1,68 @@
+[
+  {
+    "id": 6,
+    "question": "电影之所以被称为“第七艺术”，主要是因为其出现与____密切相关。",
+    "A": "社会文明",
+    "B": "科学技术",
+    "C": "意识形态",
+    "D": "人们接受程度",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 46,
+    "question": "《公民凯恩》因为属于____电影，而被叫做“好莱坞电影的另类”。",
+    "A": "诗化",
+    "B": "小说化",
+    "C": "音乐剧化",
+    "D": "舞台剧化",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 52,
+    "question": "从讲述手段来说，《英雄》比《罗生门》更有创意的原因是?",
+    "A": "采用了多人分别讲述的形式",
+    "B": "用色彩扭转剧情",
+    "C": "采用了平行蒙太奇形式",
+    "D": "用色彩区分故事",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 66,
+    "question": "电影要具有游戏性的功能、娱乐化的功能，主要是因为?",
+    "A": "它要产生市场收益",
+    "B": "它可以让观众角色替代",
+    "C": "它需要为观众产生快乐",
+    "D": "以上都对",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 104,
+    "question": "电影《国王的演讲》的影片中,一直妨碍国王顺利发表演讲的原因是什么?",
+    "A": "他哥哥的势力阻挡",
+    "B": "自身患有口吃",
+    "C": "人民的声讨",
+    "D": "聋哑",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 256,
+    "question": "纪录影片《海豚湾》的导演皮斯霍斯为什么在片中频频现身?",
+    "A": "为了露脸",
+    "B": "表明自己是导演",
+    "C": "想让观众记住自己",
+    "D": "表明自己不再是事件的旁观者,而是事件的直接叙述者和参与者。",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  }
+]

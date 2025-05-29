@@ -1,0 +1,24 @@
+[
+  {
+    "id": 224,
+    "question": "引起诉讼时效中止的原因有？",
+    "A": "起诉",
+    "B": "同意履行义务",
+    "C": "请求",
+    "D": "因不可抗力无法行使权利",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 258,
+    "question": "下列各项中,不能当然引起委托代理关系终止的原因是?",
+    "A": "被代理人死亡",
+    "B": "被代理人取消委托",
+    "C": "代理人辞去代理",
+    "D": "代理人死亡",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "id": 191,
+    "question": "《为什么要讨论白皮书?》揭露的是____对中国的侵略罪状。",
+    "A": "美国",
+    "B": "英国",
+    "C": "国民党政府",
+    "D": "日本",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 298,
+    "question": "私学产生的直接原因是?",
+    "A": "“文化下移”和士阶层的出现",
+    "B": "“文化下移”和“四民”阶层的出现",
+    "C": "生产力发展",
+    "D": "官学失守",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  }
+]

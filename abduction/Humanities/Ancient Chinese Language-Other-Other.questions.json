@@ -1,0 +1,13 @@
+[
+  {
+    "id": 229,
+    "question": "曹刿认为打仗要取得胜利,最根本的原因是?",
+    "A": "取信于民",
+    "B": "把握战机",
+    "C": "公平公正",
+    "D": "彼竭我盈",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  }
+]

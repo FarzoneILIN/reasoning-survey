@@ -1,0 +1,123 @@
+[
+  {
+    "id": 15,
+    "question": "下列哪种因素不影响生物膜的流动性？",
+    "A": "脂肪酸链长度和饱和性",
+    "B": "胆固醇含量",
+    "C": "膜蛋白种类与数量",
+    "D": "温度变化",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 51,
+    "question": "酶加速化学反应的根本原因是?",
+    "A": "升高反应温度",
+    "B": "增加反应物碰撞频率",
+    "C": "降低催化反应的活化能",
+    "D": "增加底物浓度",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 104,
+    "question": "血氨升高的主要原因是?",
+    "A": "体内氨基酸分解增加",
+    "B": "食物蛋白质摄入过多",
+    "C": "肠道氨吸收增加",
+    "D": "肝功能障碍",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 134,
+    "question": "人体内不同的细胞可合成不同的蛋白质,是因为?",
+    "A": "各种细胞的基因不同",
+    "B": "各种细胞的基因相同,但所表达的基因不同",
+    "C": "各种细胞的蛋白酶活性不同",
+    "D": "各种细胞的蛋白激酶活性不同",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 162,
+    "question": "使癌基因活化的因素有?",
+    "A": "正常基因表达增强",
+    "B": "正常基因表达减少",
+    "C": "抑癌基因表达增强",
+    "D": "点突变",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 188,
+    "question": "氮杂丝氨酸干扰核苷酸合成,因为它是下列哪\n种化合物的类似物?",
+    "A": "丝氨酸",
+    "B": "甘氨酸",
+    "C": "天冬氨酸",
+    "D": "谷氨酰胺",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 219,
+    "question": "蛋白质溶液的稳定因素是?",
+    "A": "蛋白质溶液的粘度",
+    "B": "蛋白质分子表面的疏水基团相互排斥",
+    "C": "蛋白质分子表面带有水化膜",
+    "D": "蛋白质溶液属于真溶液",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 243,
+    "question": "影响酶促反应速度的因素不包括?",
+    "A": "底物浓度",
+    "B": "酶的浓度",
+    "C": "反应环境的Ph",
+    "D": "酶原的浓度",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 252,
+    "question": "酶蛋白变性后其活性丧失，这是因为?",
+    "A": "酶蛋白被完全降解为氨基酸",
+    "B": "酶蛋白的一级结构受破坏",
+    "C": "酶蛋白的空间结构受到破坏",
+    "D": "酶蛋白不再溶于水",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 262,
+    "question": "核酸具有紫外吸收能力的原因是?",
+    "A": "嘌呤和嘧啶环中有共轭双键",
+    "B": "嘌呤和嘧啶中有氮原子",
+    "C": "嘌呤和嘧啶中有硫原子",
+    "D": "嘌呤和嘧啶连接了核糖",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 286,
+    "question": "氮杂丝氨酸干扰核苷酸合成是因为它的结构相似于?",
+    "A": "丝氨酸",
+    "B": "甘氨酸",
+    "C": "天冬酰胺",
+    "D": "谷氨酰胺",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  }
+]

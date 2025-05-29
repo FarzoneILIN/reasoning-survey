@@ -1,0 +1,145 @@
+[
+  {
+    "id": 17,
+    "question": "肝肾综合征与下列哪项因素有关?",
+    "A": "肾皮质血流量减少",
+    "B": "肾小球坏死",
+    "C": "肾小管坏死",
+    "D": "肾间质炎性病变",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 61,
+    "question": "肝功能障碍时氨清除不足是因为下列哪种物质的合成过程仅在肝脏进行?",
+    "A": "尿素",
+    "B": "脂肪酸",
+    "C": "胆固醇",
+    "D": "糖原",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 77,
+    "question": "下列哪项不是影响健康的主要因素?",
+    "A": "空气污染",
+    "B": "交通拥挤",
+    "C": "营养过剩",
+    "D": "流行服饰",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 93,
+    "question": "构成传染过程必须具备的三个因素是?",
+    "A": "传染源、传播途径、易感人群",
+    "B": "病原体、社会因素、自然因素",
+    "C": "病原体的数量、致病力、特异性定位",
+    "D": "病原体和它所处的环境",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 104,
+    "question": "胫骨中下1/3骨折愈合慢的主要原因?",
+    "A": "附近主要血管损伤",
+    "B": "附近的周围神经损伤",
+    "C": "远骨折段完全丧失血供",
+    "D": "远骨折段血供减少",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 165,
+    "question": "破伤风杆菌的致病因素?",
+    "A": "溶血毒素",
+    "B": "红疹毒素",
+    "C": "肠毒素",
+    "D": "痉挛毒素",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 177,
+    "question": "DIC病人出血与下列哪个因素关系最为密切?",
+    "A": "凝血物质被大量消耗",
+    "B": "肝脏合成凝血因子障碍",
+    "C": "血管通透性增加",
+    "D": "骨髓功能受损血小板生成减少",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 186,
+    "question": "大面积烧伤发生休克的主要原因为?",
+    "A": "大量红细胞丢失",
+    "B": "大量水分蒸发",
+    "C": "疼痛",
+    "D": "大量血浆样液体渗出",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 238,
+    "question": "下列哪项不是输血前红细胞破坏的原因?",
+    "A": "血液贮存时间超过4周",
+    "B": "血液内加入了高渗溶液",
+    "C": "血液受细菌污染",
+    "D": "血液在室内放置时间过20分钟",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 245,
+    "question": "机械性肠梗阻在短期内致病人于休克甚至死亡的主要原因是?",
+    "A": "肠内容物的运行不畅",
+    "B": "肠壁膨胀",
+    "C": "消化液的大量丢失",
+    "D": "剧痛",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 282,
+    "question": "引起高钾血症的最常见原因是?",
+    "A": "急性酸中毒",
+    "B": "急性肾功能衰竭",
+    "C": "大量使用含钾药物",
+    "D": "输库存血过多",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 285,
+    "question": "引起呼吸困难最常见的原因是?",
+    "A": "变性血红蛋白症",
+    "B": "神经精神性呼吸困难",
+    "C": "吗啡中毒",
+    "D": "心肺疾患",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  },
+  {
+    "id": 296,
+    "question": "以下哪种因素不会引起红细胞数暂时升高?",
+    "A": "感情冲动兴奋",
+    "B": "妇女妊娠期",
+    "C": "气压低时",
+    "D": "长期多次献血者",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "medicine"
+  }
+]

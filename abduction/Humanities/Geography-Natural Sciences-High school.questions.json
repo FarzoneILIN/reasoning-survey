@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "question": "在地球上看，北极星的位置几乎是不变的，主要是因为？",
+    "A": "北极星距地球很远",
+    "B": "北极星与地球的相对位置保持不变",
+    "C": "北极星的运动速度太慢",
+    "D": "地轴的北端指向北极星",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 14,
+    "question": "晴朗的天空呈现蔚蓝色，是因为大气对太阳辐射的？",
+    "A": "反射作用",
+    "B": "吸收作用",
+    "C": "散射作用",
+    "D": "折射作用",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 15,
+    "question": "造成北半球中纬度大陆东西岸气候差异的主要因素是？",
+    "A": "太阳辐射",
+    "B": "大气环流",
+    "C": "地面状况",
+    "D": "洋流",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 18,
+    "question": "夏季东亚盛行东南风，是因为位于？",
+    "A": "反气旋的东部",
+    "B": "反气旋的西部",
+    "C": "气旋的东部",
+    "D": "气旋的西部",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 20,
+    "question": "霜冻多出现在晴朗的夜里，是因为？",
+    "A": "地面辐射增强",
+    "B": "大气逆辐射增强",
+    "C": "地面辐射减弱",
+    "D": "大气逆辐射减弱",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 21,
+    "question": "城市的雾比郊区多，主要是因为城市的大气中含有较多的？",
+    "A": "水汽",
+    "B": "二氧化碳",
+    "C": "固体杂质",
+    "D": "气温较高",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 40,
+    "question": "干旱地区引起岩石风化的主要因素是？",
+    "A": "风力",
+    "B": "流水",
+    "C": "冰川",
+    "D": "气温变化",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 77,
+    "question": "决定生铁冶炼、石油加工、普通服装制造业布局的主导因素分别是？",
+    "A": "能源、原料、劳动力",
+    "B": "原料、市场、劳动力",
+    "C": "能源、原料、市场",
+    "D": "原料、能源、市场",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 81,
+    "question": "近年来，一些原来以劳动密集型工业为主的地区也在转向知识密集型的工业方向发展，主要原因是？",
+    "A": "现代化高速交通运输的发展",
+    "B": "新能源、新材料的出现",
+    "C": "微电子技术的广泛应用",
+    "D": "工人的工资水平提高",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 93,
+    "question": "发达国家城市人口比重大，主要原因是？",
+    "A": "农业现代化程度高",
+    "B": "工业现代化程度高",
+    "C": "交通运输高度发达",
+    "D": "第三产业高度发达",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 98,
+    "question": "立冬日，南部沿海地区仍处在夏季的主要原因是？",
+    "A": "位于低纬，太阳高度大",
+    "B": "南岭阻挡弱冷空气南下",
+    "C": "临海比热容大，气温高",
+    "D": "刚好有台风登陆，气温高",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  },
+  {
+    "id": 100,
+    "question": "黄淮海地区发展温室大棚种植反季节蔬菜，春末午后应注意适当通风，最主要原因是为了",
+    "A": "增加光照",
+    "B": "增加氧气量",
+    "C": "控制适宜温度",
+    "D": "促进植物的蒸腾作用，提高物质运输量",
+    "answer": "",
+    "Reasoning_type": "abduction",
+    "source_folder": "Literature_and_history"
+  }
+]
