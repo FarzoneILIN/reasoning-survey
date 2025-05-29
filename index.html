@@ -40,14 +40,32 @@ D：单一的（Single）
 “这个问题是关于哪种反射类型会产生回声，并提供了四个选项。将它们与‘反射’结合，可以得到‘直接反射’、‘远距离反射’、‘变化反射’和‘单一反射’。首先我需要回忆一下什么是回声。在物理课上，我学过回声是由镜面反射的声波产生的。这种反射发生在声波遇到大而平滑且坚硬的表面（比如悬崖或墙壁）时，声波会沿一个方向有序地反射回来。这种反射保留了声音的结构，使它能作为原声的清晰重复回到听者耳中。但‘镜面反射’并不在提供的选项中。让我确认一下术语是否准确。在声音的语境中，有时人们也称其为‘硬反射’或‘直接反射’。所以答案很明确，我应该选择 A。”
     </pre>
     <button onclick="showUserInfo()">我已阅读说明，开始填写</button>
+    <br />
+    <button onclick="clearCache()">🧹 清除缓存数据</button>
+
   </div>
 
   <!-- ✅ Step 2: 用户信息 -->
   <div id="user-info" class="hidden">
-    <label>性别：<input type="text" id="gender"></label>
+    <label>性别：
+      <select id="gender">
+        <option value="">请选择</option>
+        <option value="男">男</option>
+        <option value="女">女</option>
+        <option value="其他">其他</option>
+      </select>
+    </label>    
     <label>学校：<input type="text" id="school"></label>
-    <label>学历：<input type="text" id="degree"></label>
-    <label>地区：<input type="text" id="region"></label>
+    <label>学历：
+      <select id="degree">
+        <option value="">请选择</option>
+        <option value="本科">本科</option>
+        <option value="硕士">硕士</option>
+        <option value="博士">博士</option>
+        <option value="其他">其他</option>
+      </select>
+    </label>    
+    <label>省/直辖市：<input type="text" id="region"></label>
     <button onclick="showTipi()">填写大五人格测试</button>
   </div>
 
@@ -86,7 +104,20 @@ D：单一的（Single）
       <option value="是">是</option>
       <option value="否">否</option>
     </select>
-
+    <label>是否使用 AI 辅助？</label>
+    <select id="use-ai">
+      <option value="">请选择</option>
+      <option value="是">是</option>
+      <option value="否">否</option>
+    </select>
+    
+    <label>是否检索了相关知识？</label>
+    <select id="did-search">
+      <option value="">请选择</option>
+      <option value="是">是</option>
+      <option value="否">否</option>
+    </select>
+    
     <label>推理过程：</label>
     <div id="reasoning-steps-container"></div>
     <button type="button" onclick="addReasoningStep()">➕ 新增步骤</button>
@@ -102,6 +133,7 @@ D：单一的（Single）
     </select>
 
     <br><br>
+    <button onclick="goBack()">⬅️ 返回上一题</button>
     <button onclick="saveAndNext()">保存并进入下一题</button>
     <button onclick="downloadResults()">📤 下载已标注数据</button>
   </div>
@@ -141,15 +173,21 @@ D：单一的（Single）
     }
   
     function showTipi() {
-      userInfo = {
-        gender: document.getElementById("gender").value,
-        school: document.getElementById("school").value,
-        degree: document.getElementById("degree").value,
-        region: document.getElementById("region").value
-      };
+      const gender = document.getElementById("gender").value.trim();
+      const school = document.getElementById("school").value.trim();
+      const degree = document.getElementById("degree").value.trim();
+      const region = document.getElementById("region").value.trim();
+
+      if (!gender || !school || !degree || !region) {
+        alert("请完整填写以下基础信息：\n- 性别\n- 学校\n- 学历\n- 地区");
+        return;
+      }
+
+      userInfo = { gender, school, degree, region };
+
       document.getElementById("user-info").classList.add("hidden");
       document.getElementById("tipi-test").classList.remove("hidden");
-  
+
       const container = document.getElementById("tipi-items");
       container.innerHTML = "";
       tipiItems.forEach(({ id, text }) => {
@@ -169,7 +207,7 @@ D：单一的（Single）
         container.appendChild(div);
       });
     }
-  
+
     function confirmTipi() {
       const scores = {};
       for (let i = 1; i <= 10; i++) {
@@ -185,47 +223,43 @@ D：单一的（Single）
     async function startCategory() {
       currentCategory = document.getElementById("category-select").value;
       if (!currentCategory) return alert("请选择一个专业");
-  
+
       loadCompletedFromStorage();
-  
+
       if (Object.keys(fileIndex).length === 0) {
         const res = await fetch("file_index.json");
         fileIndex = await res.json();
       }
-  
-      fileQueue = (fileIndex[currentCategory] || []).slice();
-      if (fileQueue.length === 0) {
+
+      const fileList = fileIndex[currentCategory] || [];
+      if (fileList.length === 0) {
         alert("该专业下无题目文件");
         return;
       }
-  
+
       responses = [];
       questionIndex = 0;
-      loadNextFile();
-    }
-  
-    function loadNextFile() {
-      if (fileQueue.length === 0) {
-        document.getElementById("questionnaire").classList.add("hidden");
+      questions = [];
+
+      for (const file of fileList) {
+        const res = await fetch(file);
+        const data = await res.json();
+        const filtered = data.filter(q => !isCompleted(q.id));
+        questions.push(...filtered);
+      }
+
+      if (questions.length === 0) {
         document.getElementById("done").classList.remove("hidden");
         return;
       }
-  
-      const file = fileQueue.shift();
-      fetch(file)
-        .then(res => res.json())
-        .then(data => {
-          questions = data.filter(q => !isCompleted(q.id));
-          questionIndex = 0;
-          if (questions.length === 0) {
-            loadNextFile();
-          } else {
-            document.getElementById("done").classList.add("hidden");
-            document.getElementById("questionnaire").classList.remove("hidden");
-            showQuestion();
-          }
-        });
+
+      document.getElementById("done").classList.add("hidden");
+      document.getElementById("questionnaire").classList.remove("hidden");
+      showQuestion();
     }
+
+  
+
   
     function showQuestion() {
       const q = questions[questionIndex];
@@ -241,37 +275,45 @@ D：单一的（Single）
       initReasoningSteps();
       document.getElementById("final-answer").value = "";
       document.getElementById("is-expert").value = "";
+      document.getElementById("use-ai").value = "";
+      document.getElementById("did-search").value = "";
+
     }
-  
-    function saveAndNext() {
-      const q = questions[questionIndex];
+    
+        function saveAndNext() {
       const reasoning_steps = collectReasoningSteps();
       const finalAnswer = document.getElementById("final-answer").value;
       const isExpert = document.getElementById("is-expert").value;
+      const usedAI = document.getElementById("use-ai").value;
+      const didSearch = document.getElementById("did-search").value;
 
-      if (!isExpert || !finalAnswer || reasoning_steps.length === 0) {
-        alert("请完整填写专业方向、推理过程和最终答案。");
+      if (!isExpert || !usedAI || !didSearch || !finalAnswer || reasoning_steps.length === 0) {
+        alert("请确保以下信息全部填写：\n- 专业方向\n- 是否使用AI辅助\n- 是否检索知识\n- 推理步骤（至少一个）\n- 最终答案");
         return;
       }
 
+      const q = questions[questionIndex];
       const entry = {
-        user_info: { ...userInfo },  // 包括TIPI
+        user_info: { ...userInfo },
         id: q.id,
         source_folder: currentCategory,
         question: q.question,
         options: { A: q.A, B: q.B, C: q.C, D: q.D },
         user_is_expert: isExpert,
+        used_ai: usedAI,
+        did_search: didSearch,
         reasoning_steps,
         final_answer: finalAnswer,
         Reasoning_type: q.Reasoning_type || "abduction"
       };
 
-      // ✅ 1. 本地保存
+      // 替换旧回答
+      responses = responses.filter(r => r.id !== q.id);
       responses.push(entry);
       markCompleted(q.id);
       saveToStorage(entry);
 
-      // ✅ 2. 提交到 Google Sheets
+      // ✅ 提交至 Google Sheets（你需要先部署 Apps Script）
       fetch("https://script.google.com/macros/s/AKfycbyrhsbcvV4MJs7q6AgH1B_X4EFWWMN43E6CwGxrRnfflYNU7trh3DQ4LlB1vqgskhEq/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -279,30 +321,51 @@ D：单一的（Single）
       })
       .then(res => res.json())
       .then(data => {
-        console.log("提交成功:", data);
-
-        // ✅ 显示下一题
-        questionIndex++;
-        if (questionIndex >= questions.length) {
-          loadNextFile();
-        } else {
-          showQuestion();
-        }
+        console.log("✅ 提交成功:", data);
       })
       .catch(err => {
-        console.error("提交失败:", err);
-        alert("提交到表格失败，但已保存到本地。请检查网络或稍后重试。");
-
-        // ⚠️ 即使失败也继续推进题目
-        questionIndex++;
-        if (questionIndex >= questions.length) {
-          loadNextFile();
-        } else {
-          showQuestion();
-        }
+        console.error("❌ 提交失败:", err);
       });
+
+      questionIndex++;
+      if (questionIndex >= questions.length) {
+        document.getElementById("questionnaire").classList.add("hidden");
+        document.getElementById("done").classList.remove("hidden");
+      } else {
+        showQuestion();
+      }
     }
 
+
+    function goBack() {
+      if (questionIndex === 0) {
+        alert("已经是第一题了");
+        return;
+      }
+
+      questionIndex--;
+      showQuestion();
+
+      const q = questions[questionIndex];
+      const saved = localStorage.getItem("responses");
+      if (saved) {
+        const existing = JSON.parse(saved).find(e => e.id === q.id);
+        if (existing) {
+          document.getElementById("is-expert").value = existing.user_is_expert || "";
+          document.getElementById("use-ai").value = existing.used_ai || "";
+          document.getElementById("did-search").value = existing.did_search || "";
+          document.getElementById("final-answer").value = existing.final_answer || "";
+
+          const container = document.getElementById("reasoning-steps-container");
+          container.innerHTML = "";
+          (existing.reasoning_steps || []).forEach(step => {
+            addReasoningStep(step);
+          });
+        }
+      }
+    }
+
+  
     function reset() {
       document.getElementById("done").classList.add("hidden");
       document.getElementById("questionnaire").classList.add("hidden");
@@ -379,17 +442,7 @@ D：单一的（Single）
       const data = saved ? JSON.parse(saved) : [];
       data.push(entry);
       localStorage.setItem(key, JSON.stringify(data));
-
-      // ✅ 同步上传到 Google Sheet
-      fetch("https://script.google.com/macros/s/AKfycbyrhsbcvV4MJs7q6AgH1B_X4EFWWMN43E6CwGxrRnfflYNU7trh3DQ4LlB1vqgskhEq/exec", {
-        method: "POST",
-        body: JSON.stringify(entry),
-        headers: {
-          "Content-Type": "application/json"
-        }
-      }).then(res => res.text()).then(console.log).catch(console.error);
     }
-
   
     function downloadResults() {
       const saved = localStorage.getItem("responses");
@@ -415,6 +468,14 @@ D：单一的（Single）
       const u = localStorage.getItem("user_info");
       if (u) userInfo = JSON.parse(u);
     };
+    function clearCache() {
+  if (confirm("⚠️ 确定要清除所有缓存数据吗？该操作无法恢复。")) {
+    localStorage.clear();
+    alert("✅ 缓存已清除，请重新进入问卷。");
+    location.reload();
+  }
+}
+
   </script>
   </body>
   </html>
