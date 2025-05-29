@@ -1,0 +1,73 @@
+{
+  "Humanities": [
+    "abduction/Humanities/Ancient Chinese Language-Other-Other.questions.json",
+    "abduction/Humanities/Basic Principle of Marxism-Social Sciences-College.questions.json",
+    "abduction/Humanities/Chinese Constitutional Law-Social Sciences-College.questions.json",
+    "abduction/Humanities/Chinese-Arts & Humanities-Junior high school.questions.json",
+    "abduction/Humanities/Chinese-Arts & Humanities-Primary school.questions.json",
+    "abduction/Humanities/Civil Law-Social Sciences-College.questions.json",
+    "abduction/Humanities/Criminal Jurisprudence-Social Sciences-College.questions.json",
+    "abduction/Humanities/Current Affairs and Politics-Social Sciences-College.questions.json",
+    "abduction/Humanities/Dance-Arts & Humanities-Other.questions.json",
+    "abduction/Humanities/Developmental and Educational Psychology-Social Sciences-College.questions.json",
+    "abduction/Humanities/Economics-Other-College.questions.json",
+    "abduction/Humanities/Educational Research Methods-Social Sciences-College.questions.json",
+    "abduction/Humanities/Experimental Psychology-Social Sciences-College.questions.json",
+    "abduction/Humanities/Film-Arts & Humanities-Other.questions.json",
+    "abduction/Humanities/Fine Arts-Arts & Humanities-Other.questions.json",
+    "abduction/Humanities/Geography-Natural Sciences-High school.questions.json",
+    "abduction/Humanities/Geography-Natural Sciences-Junior high school.questions.json",
+    "abduction/Humanities/History Foundation-Arts & Humanities-College.questions.json",
+    "abduction/Humanities/History of Chinese Education-Social Sciences-College.questions.json",
+    "abduction/Humanities/History of Foreign Education-Social Sciences-College.questions.json",
+    "abduction/Humanities/History-Arts & Humanities-High school.questions.json",
+    "abduction/Humanities/History-Arts & Humanities-Junior high school.questions.json",
+    "abduction/Humanities/Introduction to Mao Tsetung Thoughts-Social Sciences-College.questions.json",
+    "abduction/Humanities/Introduction to Psychology-Social Sciences-College.questions.json",
+    "abduction/Humanities/Jurisprudence-Social Sciences-College.questions.json",
+    "abduction/Humanities/Management-Other-College.questions.json",
+    "abduction/Humanities/Modern History-Arts & Humanities-College.questions.json",
+    "abduction/Humanities/Modern World History-Arts & Humanities-College.questions.json",
+    "abduction/Humanities/Moral Cultivation-Social Sciences-College.questions.json",
+    "abduction/Humanities/Music-Arts & Humanities-Other.questions.json",
+    "abduction/Humanities/Novels-Other-Other.questions.json",
+    "abduction/Humanities/Outline of Chinese Modern History-Social Sciences-College.questions.json",
+    "abduction/Humanities/Politics-Social Sciences-High school.questions.json",
+    "abduction/Humanities/Politics-Social Sciences-Junior high school.questions.json",
+    "abduction/Humanities/Principles of Pedagogy-Social Sciences-College.questions.json",
+    "abduction/Humanities/Psychology of Teaching-Social Sciences-College.questions.json",
+    "abduction/Humanities/Religion-Other-Other.questions.json",
+    "abduction/Humanities/Sociology-Social Sciences-College.questions.json"
+  ],
+  "chemistry": [
+    "abduction/chemistry/Chemistry-Natural Sciences-High school.questions.json",
+    "abduction/chemistry/Chemistry-Natural Sciences-Junior high school.questions.json"
+  ],
+  "medicine": [
+    "abduction/medicine/Animal Physiology-Natural Sciences-College.questions.json",
+    "abduction/medicine/Biochemistry and Pathology-Natural Sciences-College.questions.json",
+    "abduction/medicine/Biochemistry-Natural Sciences-College.questions.json",
+    "abduction/medicine/Chinese Medicine-Other-Other.questions.json",
+    "abduction/medicine/Humanistic Medicine-Natural Sciences-College.questions.json",
+    "abduction/medicine/Immunology-Natural Sciences-College.questions.json",
+    "abduction/medicine/Internal Medicine-Natural Sciences-College.questions.json",
+    "abduction/medicine/Pharmacology-Natural Sciences-College.questions.json",
+    "abduction/medicine/Physiology-Natural Sciences-College.questions.json",
+    "abduction/medicine/Stomatology-Natural Sciences-College.questions.json",
+    "abduction/medicine/Surgical Sciences-Natural Sciences-College.questions.json"
+  ],
+  "physics": [
+    "abduction/physics/Physics-Natural Sciences-High schoo.questions.json",
+    "abduction/physics/Physics-Natural Sciences-Junior high school.questions.json"
+  ],
+  "computer": [
+    "abduction/computer/Computer Fundamentals-Natural Sciences-Other.questions.json",
+    "abduction/computer/Computer Networks-Natural Sciences-College.questions.json",
+    "abduction/computer/Operating Systems-Natural Sciences-College.questions.json",
+    "abduction/computer/Principles of Computer Composition-Natural Sciences-College.questions.json"
+  ],
+  "biology": [
+    "abduction/biology/Biology-Natural Sciences-High school.questions.json",
+    "abduction/biology/Biology-Natural Sciences-Junior high school.questions.json"
+  ]
+}
