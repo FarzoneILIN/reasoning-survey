@@ -11,8 +11,10 @@
     pre { background: #f8f8f8; padding: 10px; border-left: 4px solid #ccc; white-space: pre-wrap; }
   </style>
     <!-- Firebase SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+
 </head>
 <body>
   <h1>推理问卷标注系统</h1>
@@ -480,19 +482,19 @@ D：单一的（Single）
     authDomain: "reasoning-survey.firebaseapp.com",
     databaseURL: "https://reasoning-survey-default-rtdb.firebaseio.com",
     projectId: "reasoning-survey",
-    storageBucket: "reasoning-survey.firebasestorage.app",
+    storageBucket: "reasoning-survey.appspot.com",
     messagingSenderId: "307395227633",
     appId: "1:307395227633:web:e79e929d0b7bb3e0b8de50"
   };
 
   firebase.initializeApp(firebaseConfig);
-  const db = firebase.database();
+  const database = firebase.database();
 
   function saveToFirebase(entry) {
-    const timestamp = Date.now();
-    db.ref("responses/" + timestamp).set(entry)
-      .then(() => console.log("✅ 成功提交到 Firebase"))
-      .catch((error) => console.error("❌ 提交失败:", error));
+    const newRef = database.ref("responses").push();
+    newRef.set(entry)
+      .then(() => console.log("✅ 数据已保存到 Firebase"))
+      .catch(err => console.error("❌ Firebase 保存失败:", err));
   }
   </script>
   </body>
