@@ -248,7 +248,12 @@ D：单一的（Single）
       const reasoning_steps = collectReasoningSteps();
       const finalAnswer = document.getElementById("final-answer").value;
       const isExpert = document.getElementById("is-expert").value;
-  
+
+      if (!isExpert || !finalAnswer || reasoning_steps.length === 0) {
+        alert("请完整填写专业方向、推理过程和最终答案。");
+        return;
+      }
+
       const entry = {
         user_info: { ...userInfo },  // 包括TIPI
         id: q.id,
@@ -260,19 +265,44 @@ D：单一的（Single）
         final_answer: finalAnswer,
         Reasoning_type: q.Reasoning_type || "abduction"
       };
-  
+
+      // ✅ 1. 本地保存
       responses.push(entry);
       markCompleted(q.id);
       saveToStorage(entry);
-  
-      questionIndex++;
-      if (questionIndex >= questions.length) {
-        loadNextFile();
-      } else {
-        showQuestion();
-      }
+
+      // ✅ 2. 提交到 Google Sheets
+      fetch("https://script.google.com/macros/s/AKfycbyrhsbcvV4MJs7q6AgH1B_X4EFWWMN43E6CwGxrRnfflYNU7trh3DQ4LlB1vqgskhEq/exec", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(entry)
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log("提交成功:", data);
+
+        // ✅ 显示下一题
+        questionIndex++;
+        if (questionIndex >= questions.length) {
+          loadNextFile();
+        } else {
+          showQuestion();
+        }
+      })
+      .catch(err => {
+        console.error("提交失败:", err);
+        alert("提交到表格失败，但已保存到本地。请检查网络或稍后重试。");
+
+        // ⚠️ 即使失败也继续推进题目
+        questionIndex++;
+        if (questionIndex >= questions.length) {
+          loadNextFile();
+        } else {
+          showQuestion();
+        }
+      });
     }
-  
+
     function reset() {
       document.getElementById("done").classList.add("hidden");
       document.getElementById("questionnaire").classList.add("hidden");
@@ -349,7 +379,17 @@ D：单一的（Single）
       const data = saved ? JSON.parse(saved) : [];
       data.push(entry);
       localStorage.setItem(key, JSON.stringify(data));
+
+      // ✅ 同步上传到 Google Sheet
+      fetch("https://script.google.com/macros/s/AKfycbyrhsbcvV4MJs7q6AgH1B_X4EFWWMN43E6CwGxrRnfflYNU7trh3DQ4LlB1vqgskhEq/exec", {
+        method: "POST",
+        body: JSON.stringify(entry),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => res.text()).then(console.log).catch(console.error);
     }
+
   
     function downloadResults() {
       const saved = localStorage.getItem("responses");
