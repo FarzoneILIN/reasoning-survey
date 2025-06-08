@@ -260,8 +260,13 @@ D：单一的（Single）
 
     function showQuestion() {
       const q = questions[questionIndex];
-      let html = `<h3>题目 ${questionIndex+1} / ${questions.length}</h3>
-                  <p><strong>${q.question}</strong></p>`;
+      let html = `<h3>题目 ${questionIndex+1} / ${questions.length}</h3>`;
+
+      if (q.context) {
+        html += `<p style="background:#f0f0f0;padding:10px;border-left:4px solid #999;"><strong>上下文：</strong><br>${q.context}</p>`;
+      }
+
+      html += `<p><strong>${q.question}</strong></p>`;
       (q.choices || []).forEach(c => {
         const m = c.match(/^\((.)\)\s*(.*)$/);
         if (m) html += `<p>${m[1]}: ${m[2]}</p>`;
