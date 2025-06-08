@@ -9,17 +9,16 @@
     .hidden { display: none; }
     label { font-weight: bold; margin-top: 10px; display: block; }
     pre { background: #f8f8f8; padding: 10px; border-left: 4px solid #ccc; white-space: pre-wrap; }
+    button { margin: 5px 0; }
   </style>
-    <!-- Firebase SDKs -->
-
+  <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
-
 </head>
 <body>
   <h1>推理问卷标注系统</h1>
 
-  <!-- ✅ Step 1: 说明区域 -->
+  <!-- Step 1: 说明区域 -->
   <div id="instructions">
     <h3>说明：</h3>
     <ol>
@@ -33,7 +32,6 @@
       </li>
       <li><strong>最终答案</strong>：在完成整个思考过程后，选择你认为正确的选项，并解释你为什么选择它。如果你不确定，也请说明你的不确定性。</li>
     </ol>
-
     <h4>好的回答示例：</h4>
     <pre>
 问题：“回声是由哪种类型的声音反射产生的？”
@@ -42,15 +40,13 @@ B：远处的（Distant）
 C：变化的（Varied）
 D：单一的（Single）
 
-“这个问题是关于哪种反射类型会产生回声，并提供了四个选项。将它们与‘反射’结合，可以得到‘直接反射’、‘远距离反射’、‘变化反射’和‘单一反射’。首先我需要回忆一下什么是回声。在物理课上，我学过回声是由镜面反射的声波产生的。这种反射发生在声波遇到大而平滑且坚硬的表面（比如悬崖或墙壁）时，声波会沿一个方向有序地反射回来。这种反射保留了声音的结构，使它能作为原声的清晰重复回到听者耳中。但‘镜面反射’并不在提供的选项中。让我确认一下术语是否准确。在声音的语境中，有时人们也称其为‘硬反射’或‘直接反射’。所以答案很明确，我应该选择 A。”
+“这个问题是关于哪种反射类型会产生回声…所以答案很明确，我应该选择 A。”
     </pre>
     <button onclick="showUserInfo()">我已阅读说明，开始填写</button>
-    <br />
     <button onclick="clearCache()">🧹 清除缓存数据</button>
-
   </div>
 
-  <!-- ✅ Step 2: 用户信息 -->
+  <!-- Step 2: 用户信息 -->
   <div id="user-info" class="hidden">
     <label>性别：
       <select id="gender">
@@ -59,7 +55,7 @@ D：单一的（Single）
         <option value="女">女</option>
         <option value="其他">其他</option>
       </select>
-    </label>    
+    </label>
     <label>学校：<input type="text" id="school"></label>
     <label>学历：
       <select id="degree">
@@ -69,12 +65,12 @@ D：单一的（Single）
         <option value="博士">博士</option>
         <option value="其他">其他</option>
       </select>
-    </label>    
+    </label>
     <label>省/直辖市：<input type="text" id="region"></label>
     <button onclick="showTipi()">填写大五人格测试</button>
   </div>
 
-  <!-- ✅ Step 2.5: TIPI 测试 -->
+  <!-- Step 2.5: TIPI 测试 -->
   <div id="tipi-test" class="hidden">
     <h3>TIPI 大五人格测试</h3>
     <p>请根据你自己的感觉，选择每一对形容词在你身上的适用程度（1=非常不同意，7=非常同意）</p>
@@ -82,24 +78,38 @@ D：单一的（Single）
     <button onclick="confirmTipi()">确认提交 TIPI 测试</button>
   </div>
 
+  <!-- Step 3: 选择题目组 -->
+  <div id="group-select-section" class="hidden">
+    <label>请选择题目组（每组包含不同的题目组合）：</label>
+    <select id="group-select">
+      <option value="">请选择</option>
+      <option value="group_1">第1组</option>
+      <option value="group_2">第2组</option>
+      <option value="group_3">第3组</option>
+      <option value="group_4">第4组</option>
+      <option value="group_5">第5组</option>
+      <option value="group_6">第6组</option>
+      <option value="group_7">第7组</option>
+      <option value="group_8">第8组</option>
+      <option value="group_9">第9组</option>
+      <option value="group_10">第10组</option>
+    </select>
+    <button onclick="startGroup()">开始标注</button>
+  </div>
 
-
-  <!-- ✅ Step 3: 选择专业 -->
+  <!-- Step 4: 选择推理类型 -->
   <div id="category-select-section" class="hidden">
-    <label>选择题目类型（专业）：</label>
+    <label>选择推理类型：</label>
     <select id="category-select">
       <option value="">请选择</option>
-      <option value="biology">biology</option>
-      <option value="chemistry">chemistry</option>
-      <option value="physics">physics</option>
-      <option value="Humanities">Humanities</option>
-      <option value="medicine">medicine</option>
-      <option value="computer">computer</option>
+      <option value="abduction">Abduction（溯因）</option>
+      <option value="deduction">Deduction（演绎）</option>
+      <option value="induction">Induction（归纳）</option>
     </select>
     <button onclick="startCategory()">开始标注</button>
   </div>
 
-  <!-- ✅ Step 4: 标注界面 -->
+  <!-- Step 5: 标注界面 -->
   <div id="questionnaire" class="hidden">
     <div id="question-box"></div>
 
@@ -109,20 +119,21 @@ D：单一的（Single）
       <option value="是">是</option>
       <option value="否">否</option>
     </select>
+
     <label>是否使用 AI 辅助？</label>
     <select id="use-ai">
       <option value="">请选择</option>
       <option value="是">是</option>
       <option value="否">否</option>
     </select>
-    
+
     <label>是否检索了相关知识？</label>
     <select id="did-search">
       <option value="">请选择</option>
       <option value="是">是</option>
       <option value="否">否</option>
     </select>
-    
+
     <label>推理过程：</label>
     <div id="reasoning-steps-container"></div>
     <button type="button" onclick="addReasoningStep()">➕ 新增步骤</button>
@@ -137,218 +148,165 @@ D：单一的（Single）
       <option value="不确定">不确定</option>
     </select>
 
-    <br><br>
+    <br/>
     <button onclick="goBack()">⬅️ 返回上一题</button>
     <button onclick="saveAndNext()">保存并进入下一题</button>
     <button onclick="downloadResults()">📤 下载已标注数据</button>
+    <button onclick="switchGroup()">🔁 切换题目组</button>
   </div>
 
-  <!-- ✅ 完成提示 -->
+  <!-- 完成提示 -->
   <div id="done" class="hidden">
-    <h2>该专业所有题目已标注完成 🎉</h2>
-    <button onclick="reset()">切换其他专业</button>
+    <h2>本组题目已标注完成 🎉</h2>
+    <button onclick="reset()">切换题目组</button>
   </div>
 
   <script>
-      const firebaseConfig = {
-    apiKey: "AIzaSyBEY2NQRQoOYupja0VAT-ybcIVn7nDtitk",
-    authDomain: "reasoning-survey.firebaseapp.com",
-    databaseURL: "https://reasoning-survey-default-rtdb.firebaseio.com",
-    projectId: "reasoning-survey",
-    storageBucket: "reasoning-survey.appspot.com",
-    messagingSenderId: "307395227633",
-    appId: "1:307395227633:web:e79e929d0b7bb3e0b8de50"
-  };
+    // Firebase 初始化
+    const firebaseConfig = {
+      apiKey: "AIzaSyBEY2NQRQoOYupja0VAT-ybcIVn7nDtitk",
+      authDomain: "reasoning-survey.firebaseapp.com",
+      databaseURL: "https://reasoning-survey-default-rtdb.firebaseio.com",
+      projectId: "reasoning-survey",
+      storageBucket: "reasoning-survey.appspot.com",
+      messagingSenderId: "307395227633",
+      appId: "1:307395227633:web:e79e929d0b7bb3e0b8de50"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
 
-  firebase.initializeApp(firebaseConfig);
-  const database = firebase.database();
+    // 全局状态
+    let userInfo = {},
+        questions = [],
+        questionIndex = 0,
+        completedMap = {},
+        responses = [],
+        currentCategory = "";
 
-  function saveToFirebase(entry) {
-    const newRef = database.ref("responses").push();
-    newRef.set(entry)
-      .then(() => console.log("✅ 数据已保存到 Firebase"))
-      .catch(err => console.error("❌ Firebase 保存失败:", err));
-  }
-    let userInfo = {};
-    let fileIndex = {};
-    let currentCategory = "";
-    let fileQueue = [];
-    let questions = [];
-    let questionIndex = 0;
-    let completedMap = {};
-    let responses = [];
-  
     const tipiItems = [
-      { id: 1, text: "我属于外向型、爱交际", reverse: false },
-      { id: 2, text: "我属于冷静型、安静", reverse: true },
-      { id: 3, text: "我喜欢有条理、做事计划性强", reverse: false },
-      { id: 4, text: "我有些懒惰", reverse: true },
-      { id: 5, text: "我容易紧张", reverse: false },
-      { id: 6, text: "我情绪稳定，不易心烦", reverse: true },
-      { id: 7, text: "我是有创造力、有想象力的人", reverse: false },
-      { id: 8, text: "我是传统型、不会尝试新奇事物", reverse: true },
-      { id: 9, text: "我考虑周到、关心他人", reverse: false },
-      { id: 10, text: "我有时很苛刻", reverse: true }
+      { id:1, text:"我属于外向型、爱交际" },
+      { id:2, text:"我属于冷静型、安静" },
+      { id:3, text:"我喜欢有条理、做事计划性强" },
+      { id:4, text:"我有些懒惰" },
+      { id:5, text:"我容易紧张" },
+      { id:6, text:"我情绪稳定，不易心烦" },
+      { id:7, text:"我是有创造力、有想象力的人" },
+      { id:8, text:"我是传统型、不会尝试新奇事物" },
+      { id:9, text:"我考虑周到、关心他人" },
+      { id:10,text:"我有时很苛刻" }
     ];
-  
+
+    // UI 流程
     function showUserInfo() {
       document.getElementById("instructions").classList.add("hidden");
       document.getElementById("user-info").classList.remove("hidden");
     }
-  
     function showTipi() {
-      const gender = document.getElementById("gender").value.trim();
-      const school = document.getElementById("school").value.trim();
-      const degree = document.getElementById("degree").value.trim();
-      const region = document.getElementById("region").value.trim();
-
-      if (!gender || !school || !degree || !region) {
-        alert("请完整填写以下基础信息：\n- 性别\n- 学校\n- 学历\n- 地区");
-        return;
+      const g = document.getElementById("gender").value.trim();
+      const s = document.getElementById("school").value.trim();
+      const d = document.getElementById("degree").value.trim();
+      const r = document.getElementById("region").value.trim();
+      if (!g || !s || !d || !r) {
+        return alert("请完整填写用户信息");
       }
-
-      userInfo = { gender, school, degree, region };
-
+      userInfo = { gender: g, school: s, degree: d, region: r };
       document.getElementById("user-info").classList.add("hidden");
       document.getElementById("tipi-test").classList.remove("hidden");
-
-      const container = document.getElementById("tipi-items");
-      container.innerHTML = "";
-      tipiItems.forEach(({ id, text }) => {
+      const ctr = document.getElementById("tipi-items");
+      ctr.innerHTML = "";
+      tipiItems.forEach(({id,text})=>{
         const div = document.createElement("div");
-        const label = document.createElement("label");
-        label.innerText = `${id}. ${text}`;
-        const select = document.createElement("select");
-        select.id = `tipi-${id}`;
-        for (let i = 1; i <= 7; i++) {
-          const opt = document.createElement("option");
-          opt.value = i;
-          opt.innerText = i;
-          select.appendChild(opt);
-        }
-        div.appendChild(label);
-        div.appendChild(select);
-        container.appendChild(div);
+        div.innerHTML = `
+          <label>${id}. ${text}</label>
+          <select id="tipi-${id}">
+            ${[...Array(7)].map((_,i)=>`<option value="${i+1}">${i+1}</option>`).join("")}
+          </select>`;
+        ctr.appendChild(div);
       });
     }
-
     function confirmTipi() {
       const scores = {};
-      for (let i = 1; i <= 10; i++) {
-        scores[`item${i}`] = parseInt(document.getElementById(`tipi-${i}`).value, 10);
-      }
+      tipiItems.forEach(({id})=>{
+        scores[`item${id}`] = +document.getElementById(`tipi-${id}`).value;
+      });
       userInfo.tipi_scores = scores;
-  
       localStorage.setItem("user_info", JSON.stringify(userInfo));
       document.getElementById("tipi-test").classList.add("hidden");
-      document.getElementById("category-select-section").classList.remove("hidden");
+      document.getElementById("group-select-section").classList.remove("hidden");
     }
-  
-    async function startCategory() {
-      currentCategory = document.getElementById("category-select").value;
-      if (!currentCategory) return alert("请选择一个专业");
 
-      loadCompletedFromStorage();
-
-      if (Object.keys(fileIndex).length === 0) {
-        const res = await fetch("file_index.json");
-        fileIndex = await res.json();
+    async function startGroup() {
+      const grp = document.getElementById("group-select").value;
+      if (!grp) return alert("请选择题目组");
+      currentCategory = grp;
+      loadCompleted();
+      try {
+        const text = await (await fetch(`10_groups_output/${grp}.jsonl`)).text();
+        questions = text.trim().split("\n").map(l=>JSON.parse(l));
+      } catch(e) {
+        return alert("加载失败："+e);
       }
-
-      const fileList = fileIndex[currentCategory] || [];
-      if (fileList.length === 0) {
-        alert("该专业下无题目文件");
-        return;
-      }
-
-      responses = [];
-      questionIndex = 0;
-      questions = [];
-
-      for (const file of fileList) {
-        const res = await fetch(file);
-        const data = await res.json();
-        const filtered = data.filter(q => !isCompleted(q.id));
-        questions.push(...filtered);
-      }
-
-      if (questions.length === 0) {
+      if (!questions.length) {
         document.getElementById("done").classList.remove("hidden");
         return;
       }
-
+      questionIndex = 0;
+      responses = [];
+      document.getElementById("group-select-section").classList.add("hidden");
       document.getElementById("done").classList.add("hidden");
       document.getElementById("questionnaire").classList.remove("hidden");
       showQuestion();
     }
 
-  
+    function startCategory() {
+      // 如果你还需要根据推理类型再过滤题目，在这里实现
+      document.getElementById("category-select-section").classList.add("hidden");
+      document.getElementById("questionnaire").classList.remove("hidden");
+    }
 
-  
     function showQuestion() {
       const q = questions[questionIndex];
-      const html = `
-        <h3>题目 ${questionIndex + 1} / ${questions.length}</h3>
-        <p><strong>${q.question}</strong></p>
-        <p>A: ${q.A}</p>
-        <p>B: ${q.B}</p>
-        <p>C: ${q.C}</p>
-        <p>D: ${q.D}</p>
-      `;
+      let html = `<h3>题目 ${questionIndex+1} / ${questions.length}</h3>
+                  <p><strong>${q.question}</strong></p>`;
+      (q.choices||[]).forEach(c=>{
+        const m = c.match(/^\((.)\)\s*(.*)$/);
+        if (m) html += `<p>${m[1]}: ${m[2]}</p>`;
+      });
       document.getElementById("question-box").innerHTML = html;
       initReasoningSteps();
-      document.getElementById("final-answer").value = "";
-      document.getElementById("is-expert").value = "";
-      document.getElementById("use-ai").value = "";
-      document.getElementById("did-search").value = "";
-
+      ["final-answer","is-expert","use-ai","did-search"].forEach(id=>{
+        document.getElementById(id).value="";
+      });
     }
-    
+
     function saveAndNext() {
-      const reasoning_steps = collectReasoningSteps();
-      const finalAnswer = document.getElementById("final-answer").value;
-      const isExpert = document.getElementById("is-expert").value;
-      const usedAI = document.getElementById("use-ai").value;
-      const didSearch = document.getElementById("did-search").value;
-
-      if (!isExpert || !usedAI || !didSearch || !finalAnswer || reasoning_steps.length === 0) {
-        alert("请确保以下信息全部填写：\n- 专业方向\n- 是否使用AI辅助\n- 是否检索知识\n- 推理步骤（至少一个）\n- 最终答案");
-        return;
+      const steps = collectSteps();
+      const ans = document.getElementById("final-answer").value;
+      const exp = document.getElementById("is-expert").value;
+      const ai = document.getElementById("use-ai").value;
+      const ds = document.getElementById("did-search").value;
+      if (!exp||!ai||!ds||!ans||!steps.length) {
+        return alert("请完整填写所有字段");
       }
-
       const q = questions[questionIndex];
       const entry = {
-        user_info: { ...userInfo },
+        user_info: userInfo,
         id: q.id,
-        source_folder: currentCategory,
+        source_group: currentCategory,
         question: q.question,
-        options: { A: q.A, B: q.B, C: q.C, D: q.D },
-        user_is_expert: isExpert,
-        used_ai: usedAI,
-        did_search: didSearch,
-        reasoning_steps,
-        final_answer: finalAnswer,
-        Reasoning_type: q.Reasoning_type || "abduction"
+        options: q.choices,
+        user_is_expert: exp,
+        used_ai: ai,
+        did_search: ds,
+        reasoning_steps: steps,
+        final_answer: ans
       };
-
-      // 替换旧回答
-      responses = responses.filter(r => r.id !== q.id);
-      responses.push(entry);
-      markCompleted(q.id);
-      saveToStorage(entry);
-
-      // ✅ 替换为 Firebase 实时数据库提交
-      const timestamp = Date.now();
-      firebase.database().ref("responses/" + timestamp).set(entry)
-        .then(() => {
-          console.log("✅ 已成功提交到 Firebase");
-        })
-        .catch((err) => {
-          console.error("❌ Firebase 提交失败:", err);
-        });
-
+      responses = responses.filter(r=>r.id!==q.id).concat(entry);
+      markDone(q.id);
+      saveLocal(entry);
+      saveToFirebase(entry);
       questionIndex++;
-      if (questionIndex >= questions.length) {
+      if (questionIndex>=questions.length) {
         document.getElementById("questionnaire").classList.add("hidden");
         document.getElementById("done").classList.remove("hidden");
       } else {
@@ -356,148 +314,89 @@ D：单一的（Single）
       }
     }
 
-
-
     function goBack() {
-      if (questionIndex === 0) {
-        alert("已经是第一题了");
-        return;
-      }
-
+      if (questionIndex===0) return alert("已经是第一题");
       questionIndex--;
       showQuestion();
-
-      const q = questions[questionIndex];
-      const saved = localStorage.getItem("responses");
-      if (saved) {
-        const existing = JSON.parse(saved).find(e => e.id === q.id);
-        if (existing) {
-          document.getElementById("is-expert").value = existing.user_is_expert || "";
-          document.getElementById("use-ai").value = existing.used_ai || "";
-          document.getElementById("did-search").value = existing.did_search || "";
-          document.getElementById("final-answer").value = existing.final_answer || "";
-
-          const container = document.getElementById("reasoning-steps-container");
-          container.innerHTML = "";
-          (existing.reasoning_steps || []).forEach(step => {
-            addReasoningStep(step);
-          });
-        }
-      }
     }
 
-  
+    function switchGroup() {
+      if (!confirm("确定切换题目组？")) return;
+      document.getElementById("questionnaire").classList.add("hidden");
+      document.getElementById("group-select-section").classList.remove("hidden");
+    }
+
     function reset() {
       document.getElementById("done").classList.add("hidden");
-      document.getElementById("questionnaire").classList.add("hidden");
-      document.getElementById("category-select").value = "";
+      document.getElementById("group-select-section").classList.remove("hidden");
     }
-  
+
+    // 辅助：推理步骤
     function initReasoningSteps() {
-      const container = document.getElementById("reasoning-steps-container");
-      container.innerHTML = '';
+      const ctr = document.getElementById("reasoning-steps-container");
+      ctr.innerHTML = "";
       addReasoningStep();
     }
-  
-    function addReasoningStep(defaultText = "") {
-      const container = document.getElementById("reasoning-steps-container");
-      const stepIndex = container.children.length + 1;
-      const div = document.createElement('div');
-      div.style.marginBottom = '10px';
-      const label = document.createElement('label');
-      label.innerText = `推理步骤 ${stepIndex}`;
-      const textarea = document.createElement('textarea');
-      textarea.rows = 4;
-      textarea.style.width = '100%';
-      textarea.value = defaultText;
-      const removeBtn = document.createElement('button');
-      removeBtn.innerText = '删除该步骤';
-      removeBtn.type = 'button';
-      removeBtn.style.marginTop = '5px';
-      removeBtn.onclick = () => {
-        container.removeChild(div);
-        refreshReasoningLabels();
-      };
-      div.appendChild(label);
-      div.appendChild(textarea);
-      div.appendChild(document.createElement('br'));
-      div.appendChild(removeBtn);
-      container.appendChild(div);
+    function addReasoningStep(txt="") {
+      const ctr = document.getElementById("reasoning-steps-container");
+      const idx = ctr.children.length + 1;
+      const div = document.createElement("div");
+      div.innerHTML = `
+        <label>推理步骤 ${idx}</label>
+        <textarea>${txt}</textarea>
+        <button type="button" onclick="this.parentNode.remove(),initReasoningSteps()">删除该步骤</button>
+      `;
+      ctr.appendChild(div);
     }
-  
-    function refreshReasoningLabels() {
-      const labels = document.querySelectorAll("#reasoning-steps-container label");
-      labels.forEach((label, index) => {
-        label.innerText = `推理步骤 ${index + 1}`;
-      });
+    function collectSteps() {
+      return Array.from(document.querySelectorAll("#reasoning-steps-container textarea"))
+        .map(t=>t.value.trim()).filter(v=>v);
     }
-  
-    function collectReasoningSteps() {
-      const steps = [];
-      const textareas = document.querySelectorAll("#reasoning-steps-container textarea");
-      textareas.forEach(t => {
-        const val = t.value.trim();
-        if (val) steps.push(val);
-      });
-      return steps;
+
+    // 本地存储
+    function loadCompleted() {
+      completedMap = JSON.parse(localStorage.getItem("completed_ids")||"{}");
     }
-  
-    function loadCompletedFromStorage() {
-      const saved = localStorage.getItem("completed_ids");
-      completedMap = saved ? JSON.parse(saved) : {};
-    }
-  
-    function markCompleted(id) {
-      const key = `${currentCategory}:${id}`;
-      completedMap[key] = true;
+    function markDone(id) {
+      completedMap[`${currentCategory}:${id}`] = true;
       localStorage.setItem("completed_ids", JSON.stringify(completedMap));
     }
-  
-    function isCompleted(id) {
-      return completedMap[`${currentCategory}:${id}`];
+    function saveLocal(entry) {
+      const arr = JSON.parse(localStorage.getItem("responses")||"[]");
+      arr.push(entry);
+      localStorage.setItem("responses", JSON.stringify(arr));
     }
-  
-    function saveToStorage(entry) {
-      const key = "responses";
-      const saved = localStorage.getItem(key);
-      const data = saved ? JSON.parse(saved) : [];
-      data.push(entry);
-      localStorage.setItem(key, JSON.stringify(data));
+
+    // Firebase 存储
+    function saveToFirebase(entry) {
+      database.ref("responses/" + Date.now()).set(entry)
+        .catch(console.error);
     }
-  
+
+    // 下载
     function downloadResults() {
-      const saved = localStorage.getItem("responses");
-      if (!saved) return alert("还没有任何标注结果！");
-      const user = JSON.parse(localStorage.getItem("user_info") || "{}");
-      const fields = [
-        user.gender || "unknown",
-        user.school || "unknown",
-        user.degree || "unknown",
-        user.region || "unknown"
-      ];
-      const timestamp = new Date().toISOString().slice(0,10).replace(/-/g,"");
-      const filename = `annotated_results_${fields.join("_")}_${timestamp}.json`.replace(/\s+/g, "_");
-      const blob = new Blob([saved], { type: 'application/json' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = filename;
+      const data = localStorage.getItem("responses");
+      if (!data) return alert("无标注结果");
+      const u = JSON.parse(localStorage.getItem("user_info")||"{}");
+      const fn = `annotated_${u.gender||"u"}_${u.school||"u"}_${u.degree||"u"}_${u.region||"u"}_${new Date().toISOString().slice(0,10)}.json`;
+      const b = new Blob([data], { type:"application/json" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(b);
+      a.download = fn;
       a.click();
     }
 
+    function clearCache() {
+      if (confirm("⚠️ 确定清除所有缓存？")) {
+        localStorage.clear();
+        location.reload();
+      }
+    }
+
     window.onload = () => {
-      loadCompletedFromStorage();
       const u = localStorage.getItem("user_info");
       if (u) userInfo = JSON.parse(u);
     };
-    function clearCache() {
-  if (confirm("⚠️ 确定要清除所有缓存数据吗？该操作无法恢复。")) {
-    localStorage.clear();
-    alert("✅ 缓存已清除，请重新进入问卷。");
-    location.reload();
-  }
-}
-
   </script>
-  </body>
-  </html>
-  
+</body>
+</html>
