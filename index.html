@@ -139,14 +139,8 @@ D：单一的（Single）
     <button type="button" onclick="addReasoningStep()">➕ 新增步骤</button>
 
     <label>最终答案：</label>
-    <select id="final-answer">
-      <option value="">请选择</option>
-      <option value="A">A</option>
-      <option value="B">B</option>
-      <option value="C">C</option>
-      <option value="D">D</option>
-      <option value="不确定">不确定</option>
-    </select>
+    <div id="final-answer"></div>
+
 
     <br/>
     <button onclick="goBack()">⬅️ 返回上一题</button>
@@ -268,20 +262,45 @@ D：单一的（Single）
       const q = questions[questionIndex];
       let html = `<h3>题目 ${questionIndex+1} / ${questions.length}</h3>
                   <p><strong>${q.question}</strong></p>`;
-      (q.choices||[]).forEach(c=>{
+      (q.choices || []).forEach(c => {
         const m = c.match(/^\((.)\)\s*(.*)$/);
         if (m) html += `<p>${m[1]}: ${m[2]}</p>`;
       });
       document.getElementById("question-box").innerHTML = html;
+      renderFinalAnswerOptions(q.choices);
       initReasoningSteps();
-      ["final-answer","is-expert","use-ai","did-search"].forEach(id=>{
+      ["is-expert","use-ai","did-search"].forEach(id=>{
         document.getElementById(id).value="";
       });
     }
 
+    function renderFinalAnswerOptions(choices) {
+      const container = document.getElementById("final-answer");
+      container.innerHTML = "";
+      if (Array.isArray(choices) && choices.length > 0) {
+        const sel = document.createElement("select");
+        sel.id = "final-answer-select";
+        sel.innerHTML = `<option value="">请选择</option>`;
+        for (const c of choices) {
+          const m = c.match(/^\((.)\)\s*(.*)$/);
+          if (m) sel.innerHTML += `<option value="${m[1]}">${m[1]}: ${m[2]}</option>`;
+        }
+        sel.innerHTML += `<option value="不确定">不确定</option>`;
+        container.appendChild(sel);
+      } else {
+        const input = document.createElement("input");
+        input.type = "text";
+        input.id = "final-answer-text";
+        input.placeholder = "请输入你的最终答案（非选择题）";
+        container.appendChild(input);
+      }
+    }
+
     function saveAndNext() {
       const steps = collectSteps();
-      const ans = document.getElementById("final-answer").value;
+      const sel = document.getElementById("final-answer-select");
+      const txt = document.getElementById("final-answer-text");
+      const ans = sel ? sel.value : (txt ? txt.value.trim() : "");
       const exp = document.getElementById("is-expert").value;
       const ai = document.getElementById("use-ai").value;
       const ds = document.getElementById("did-search").value;
@@ -313,6 +332,7 @@ D：单一的（Single）
         showQuestion();
       }
     }
+
 
     function goBack() {
       if (questionIndex===0) return alert("已经是第一题");
