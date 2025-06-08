@@ -4,18 +4,90 @@
   <meta charset="UTF-8" />
   <title>推理问卷标注系统</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; max-width: 900px; margin: auto; }
-    textarea { width: 100%; height: 100px; }
-    .hidden { display: none; }
-    label { font-weight: bold; margin-top: 10px; display: block; }
-    pre { background: #f8f8f8; padding: 10px; border-left: 4px solid #ccc; white-space: pre-wrap; }
-    button { margin: 5px 0; }
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background: #f9f9f9;
+      padding: 20px;
+      margin: 0;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+
+    h1, h2, h3 {
+      color: #222;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-top: 15px;
+    }
+
+    select, input, textarea {
+      font-size: 16px;
+      padding: 6px;
+      width: 100%;
+      margin-top: 4px;
+      box-sizing: border-box;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      font-size: 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 12px;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .question-card {
+      background: #f0f4f8;
+      padding: 16px;
+      border-left: 4px solid #007bff;
+      margin-bottom: 16px;
+      border-radius: 6px;
+    }
+
+    .context-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+    }
+
   </style>
   <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
 </head>
-<body>
+<>
+  <div class="container">
+
   <h1>推理问卷标注系统</h1>
 
   <!-- Step 1: 说明区域 -->
@@ -260,17 +332,29 @@ D：单一的（Single）
 
     function showQuestion() {
       const q = questions[questionIndex];
-      let html = `<h3>题目 ${questionIndex+1} / ${questions.length}</h3>`;
+      let html = `
+        <div class="question-card">
+          <h3 style="margin-bottom: 10px;">题目 ${questionIndex + 1} / ${questions.length}</h3>
+      `;
 
       if (q.context) {
-        html += `<p style="background:#f0f0f0;padding:10px;border-left:4px solid #999;"><strong>上下文：</strong><br>${q.context}</p>`;
+        html += `
+          <div class="context-box">
+            <strong>上下文：</strong><br>${q.context}
+          </div>
+        `;
       }
 
-      html += `<p><strong>${q.question}</strong></p>`;
+      html += `<div style="margin: 10px 0;"><strong>${q.question}</strong></div>`;
+
       (q.choices || []).forEach(c => {
         const m = c.match(/^\((.)\)\s*(.*)$/);
-        if (m) html += `<p>${m[1]}: ${m[2]}</p>`;
+        if (m) {
+          html += `<div style="padding-left: 8px;">${m[1]}：${m[2]}</div>`;
+        }
       });
+
+      html += `</div>`;
       document.getElementById("question-box").innerHTML = html;
       renderFinalAnswerOptions(q.choices);
       initReasoningSteps();
@@ -423,5 +507,7 @@ D：单一的（Single）
       if (u) userInfo = JSON.parse(u);
     };
   </script>
+  </div>
+
 </body>
 </html>
