@@ -310,7 +310,7 @@ D：单一的（Single）
       const q = questions[questionIndex];
       const entry = {
         user_info: userInfo,
-        id: q.id,
+        id: q.id || q.index || `question_${Date.now()}`,  // 增加容错
         source_group: currentCategory,
         question: q.question,
         options: q.choices,
