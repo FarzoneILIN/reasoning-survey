@@ -512,38 +512,21 @@ D：单一的（Single）
       const u = localStorage.getItem("user_info");
       if (u) {
         userInfo = JSON.parse(u);
-
-        // 如果已经有 user_info，说明已填写过基本信息和 TIPI 测试
-        document.getElementById("instructions").classList.add("hidden");
-        document.getElementById("user-info").classList.add("hidden");
-        document.getElementById("tipi-test").classList.add("hidden");
-
-        // 如果已经选过题目组并完成部分题目，继续从上次未完成的地方开始
-        const lastGroup = localStorage.getItem("last_group");
-        if (lastGroup) {
-          document.getElementById("group-select-section").classList.add("hidden");
-          currentCategory = lastGroup;
-          loadCompleted();
-          fetch(`10_groups_output/${lastGroup}.jsonl`)
-            .then(res => res.text())
-            .then(text => {
-              questions = text.trim().split("\n").map(l=>JSON.parse(l));
-              const keyPrefix = currentCategory + ":";
-              const firstUnfinished = questions.findIndex(q => !completedMap[keyPrefix + (q.id || q.index)]);
-              questionIndex = firstUnfinished === -1 ? 0 : firstUnfinished;
-              document.getElementById("questionnaire").classList.remove("hidden");
-              showQuestion();
-            })
-            .catch(err => {
-              alert("加载上次标注进度失败：" + err);
-              document.getElementById("group-select-section").classList.remove("hidden");
-            });
-        } else {
-          // 未选题目组，进入选择界面
+        if (userInfo.tipi_scores) {
+          // 大五人格也填过了，直接跳到题目组选择
+          document.getElementById("instructions").classList.add("hidden");
           document.getElementById("group-select-section").classList.remove("hidden");
+        } else {
+          // 只填了基础信息，没填TIPI
+          document.getElementById("instructions").classList.add("hidden");
+          document.getElementById("user-info").classList.remove("hidden");
         }
+      } else {
+        // 什么都没填，留在说明页
+        document.getElementById("instructions").classList.remove("hidden");
       }
     };
+
 
   </script>
   </div>
