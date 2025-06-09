@@ -313,7 +313,11 @@ D：单一的（Single）
         return alert("加载失败："+e);
       }
 
-      questionIndex = questions.findIndex(q => !completedMap[`${currentCategory}:${q.id || q.index}`]);
+      questionIndex = questions.findIndex(q => {
+        const qid = q.id || q.index;
+        return !completedMap[`${currentCategory}:${qid}`];
+      });
+
       if (questionIndex === -1) {
         document.getElementById("done").classList.remove("hidden");
         return;
@@ -391,6 +395,10 @@ D：单一的（Single）
     }
 
     function saveAndNext() {
+      const q = questions[questionIndex];
+      const qid = q.id || q.index;
+      if (!qid) return alert("题目缺少唯一标识符（id或index）");
+
       const steps = collectSteps();
       const sel = document.getElementById("final-answer-select");
       const txt = document.getElementById("final-answer-text");
@@ -401,10 +409,9 @@ D：单一的（Single）
       if (!exp||!ai||!ds||!ans||!steps.length) {
         return alert("请完整填写所有字段");
       }
-      const q = questions[questionIndex];
       const entry = {
         user_info: userInfo,
-        id: q.id || q.index || `question_${Date.now()}`,  // 增加容错
+        id: qid,
         source_group: currentCategory,
         question: q.question,
         options: q.choices,
@@ -415,7 +422,7 @@ D：单一的（Single）
         final_answer: ans
       };
       responses = responses.filter(r=>r.id!==q.id).concat(entry);
-      markDone(q.id);
+      markDone(qid);
       saveLocal(entry);
       saveToFirebase(entry);
       questionIndex++;
@@ -475,6 +482,7 @@ D：单一的（Single）
       completedMap[`${currentCategory}:${id}`] = true;
       localStorage.setItem("completed_ids", JSON.stringify(completedMap));
     }
+
     function saveLocal(entry) {
       const arr = JSON.parse(localStorage.getItem("responses")||"[]");
       arr.push(entry);
@@ -519,7 +527,11 @@ D：单一的（Single）
           .then(r => r.text())
           .then(text => {
             questions = text.trim().split("\n").map(l => JSON.parse(l));
-            questionIndex = questions.findIndex(q => !completedMap[`${currentCategory}:${q.id || q.index}`]);
+            questionIndex = questions.findIndex(q => {
+              const qid = q.id || q.index;
+              return !completedMap[`${currentCategory}:${qid}`];
+            });
+
             if (questionIndex === -1) {
               document.getElementById("done").classList.remove("hidden");
             } else {
