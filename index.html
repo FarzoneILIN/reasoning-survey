@@ -305,7 +305,7 @@ D：单一的（Single）
       const grp = document.getElementById("group-select").value;
       if (!grp) return alert("请选择题目组");
       currentCategory = grp;
-      loadCompleted();
+      localStorage.setItem("last_group", grp);  
       try {
         const text = await (await fetch(`10_groups_output/${grp}.jsonl`)).text();
         questions = text.trim().split("\n").map(l=>JSON.parse(l));
@@ -316,12 +316,18 @@ D：单一的（Single）
         document.getElementById("done").classList.remove("hidden");
         return;
       }
-      questionIndex = 0;
       responses = [];
       document.getElementById("group-select-section").classList.add("hidden");
       document.getElementById("done").classList.add("hidden");
       document.getElementById("questionnaire").classList.remove("hidden");
+
+      // 查找第一个未完成的题目
+      const keyPrefix = currentCategory + ":";
+      const firstUnfinished = questions.findIndex(q => !completedMap[keyPrefix + (q.id || q.index)]);
+      questionIndex = firstUnfinished === -1 ? 0 : firstUnfinished;
+
       showQuestion();
+
     }
 
     function startCategory() {
@@ -504,8 +510,41 @@ D：单一的（Single）
 
     window.onload = () => {
       const u = localStorage.getItem("user_info");
-      if (u) userInfo = JSON.parse(u);
+      if (u) {
+        userInfo = JSON.parse(u);
+
+        // 如果已经有 user_info，说明已填写过基本信息和 TIPI 测试
+        document.getElementById("instructions").classList.add("hidden");
+        document.getElementById("user-info").classList.add("hidden");
+        document.getElementById("tipi-test").classList.add("hidden");
+
+        // 如果已经选过题目组并完成部分题目，继续从上次未完成的地方开始
+        const lastGroup = localStorage.getItem("last_group");
+        if (lastGroup) {
+          document.getElementById("group-select-section").classList.add("hidden");
+          currentCategory = lastGroup;
+          loadCompleted();
+          fetch(`10_groups_output/${lastGroup}.jsonl`)
+            .then(res => res.text())
+            .then(text => {
+              questions = text.trim().split("\n").map(l=>JSON.parse(l));
+              const keyPrefix = currentCategory + ":";
+              const firstUnfinished = questions.findIndex(q => !completedMap[keyPrefix + (q.id || q.index)]);
+              questionIndex = firstUnfinished === -1 ? 0 : firstUnfinished;
+              document.getElementById("questionnaire").classList.remove("hidden");
+              showQuestion();
+            })
+            .catch(err => {
+              alert("加载上次标注进度失败：" + err);
+              document.getElementById("group-select-section").classList.remove("hidden");
+            });
+        } else {
+          // 未选题目组，进入选择界面
+          document.getElementById("group-select-section").classList.remove("hidden");
+        }
+      }
     };
+
   </script>
   </div>
 
