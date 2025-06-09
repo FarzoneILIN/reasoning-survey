@@ -305,30 +305,27 @@ D：单一的（Single）
       const grp = document.getElementById("group-select").value;
       if (!grp) return alert("请选择题目组");
       currentCategory = grp;
-      localStorage.setItem("last_group", grp);  
+      loadCompleted();
       try {
         const text = await (await fetch(`10_groups_output/${grp}.jsonl`)).text();
         questions = text.trim().split("\n").map(l=>JSON.parse(l));
       } catch(e) {
         return alert("加载失败："+e);
       }
-      if (!questions.length) {
+
+      questionIndex = questions.findIndex(q => !completedMap[`${currentCategory}:${q.id || q.index}`]);
+      if (questionIndex === -1) {
         document.getElementById("done").classList.remove("hidden");
         return;
       }
+
       responses = [];
       document.getElementById("group-select-section").classList.add("hidden");
       document.getElementById("done").classList.add("hidden");
       document.getElementById("questionnaire").classList.remove("hidden");
-
-      // 查找第一个未完成的题目
-      const keyPrefix = currentCategory + ":";
-      const firstUnfinished = questions.findIndex(q => !completedMap[keyPrefix + (q.id || q.index)]);
-      questionIndex = firstUnfinished === -1 ? 0 : firstUnfinished;
-
       showQuestion();
-
     }
+
 
     function startCategory() {
       // 如果你还需要根据推理类型再过滤题目，在这里实现
