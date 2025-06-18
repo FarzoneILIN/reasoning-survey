@@ -641,14 +641,12 @@ D：单一的（Single）
     reasoningStepLabel: "推理步骤",
     deleteStep: "删除该步骤",
     alertIncompleteUserInfo: "请完整填写用户信息",
-    expertOptions: ["请选择", "是", "否"],
-    aiOptions: ["请选择", "是", "否"],
-    earchOptions: ["请选择", "是", "否"],
     contextLabel: "上下文：",
     groupPrefix: "第",
     groupSuffix: "组",
     questionPrefix: "题目",
-
+    yesOption: "是",
+    noOption: "否",
   },
   en: {
     langBtn: "中文",
@@ -715,13 +713,12 @@ D:Single
     reasoningStepLabel: "Reasoning Step",
     deleteStep: "Delete Step",
     alertIncompleteUserInfo: "Please complete all user info fields",
-    expertOptions: ["Please select", "Yes", "No"],
-    aiOptions: ["Please select", "Yes", "No"],
-    searchOptions: ["Please select", "Yes", "No"],
     contextLabel: "Context:",
     groupPrefix: "Group ",
     groupSuffix: "",
     questionPrefix: "Question",
+    yesOption: "Yes",
+    noOption: "No",
   }
 };
 
@@ -796,7 +793,7 @@ D:Single
       document.getElementById("reasoning-steps-label").textContent = text.reasoningStepsLabel;
       document.getElementById("final-answer-label").textContent = text.finalAnswerLabel;
       document.getElementById("add-step-btn").textContent = text.addStep;
-
+      
       // 标注表单按钮
       document.getElementById("go-back-btn").textContent = text.goBack;
       document.getElementById("save-next-btn").textContent = text.saveAndNext;
@@ -807,16 +804,30 @@ D:Single
       document.getElementById("done-title").textContent = text.doneTitle;
       document.getElementById("reset-btn").textContent = text.reset;
       // 专家选项
-      const expertSel = document.getElementById("is-expert");
-      expertSel.innerHTML = LANG_TEXT[currentLang].expertOptions.map(opt => `<option>${opt}</option>`).join("");
+// is-expert 下拉框
+const expertSel = document.getElementById("is-expert");
+expertSel.innerHTML = `
+  <option value="" disabled selected>${LANG_TEXT[currentLang].selectPlaceholder}</option>
+  <option value="${LANG_TEXT[currentLang].yesOption}">${LANG_TEXT[currentLang].yesOption}</option>
+  <option value="${LANG_TEXT[currentLang].noOption}">${LANG_TEXT[currentLang].noOption}</option>
+`;
 
-      // AI辅助选项
-      const aiSel = document.getElementById("use-ai");
-      aiSel.innerHTML = LANG_TEXT[currentLang].aiOptions.map(opt => `<option>${opt}</option>`).join("");
+// use-ai 下拉框
+const aiSel = document.getElementById("use-ai");
+aiSel.innerHTML = `
+  <option value="" disabled selected>${LANG_TEXT[currentLang].selectPlaceholder}</option>
+  <option value="${LANG_TEXT[currentLang].yesOption}">${LANG_TEXT[currentLang].yesOption}</option>
+  <option value="${LANG_TEXT[currentLang].noOption}">${LANG_TEXT[currentLang].noOption}</option>
+`;
 
-      // 检索选项
-      const searchSel = document.getElementById("did-search");
-      searchSel.innerHTML = LANG_TEXT[currentLang].searchOptions.map(opt => `<option>${opt}</option>`).join("");
+// did-search 下拉框
+const searchSel = document.getElementById("did-search");
+searchSel.innerHTML = `
+  <option value="" disabled selected>${LANG_TEXT[currentLang].selectPlaceholder}</option>
+  <option value="${LANG_TEXT[currentLang].yesOption}">${LANG_TEXT[currentLang].yesOption}</option>
+  <option value="${LANG_TEXT[currentLang].noOption}">${LANG_TEXT[currentLang].noOption}</option>
+`;
+
 
       // 切换按钮
       document.getElementById("lang-btn-text").textContent = text.langBtn;
