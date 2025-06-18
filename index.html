@@ -521,7 +521,7 @@ D：单一的（Single）
     }
     function populateGroupOptions(maxGroup = 20) {
       const select = document.getElementById("group-select");
-      select.innerHTML = `<option value="">${LANG_TEXT[currentLang].selectPlaceholder}</option>`;
+      select.innerHTML = `<option value="" disabled selected>${LANG_TEXT[currentLang].selectPlaceholder}</option>`;
       for (let i = 1; i <= maxGroup; i++) {
         const val = `group_${i}`;
         const opt = document.createElement("option");
@@ -753,10 +753,15 @@ D:Single
 
       // 性别选项
       const genderSel = document.getElementById("gender");
-      genderSel.innerHTML = text.genderOptions.map(opt => `<option value="${opt}">${opt}</option>`).join("");
+      genderSel.innerHTML = `<option value="" disabled selected>${LANG_TEXT[currentLang].selectPlaceholder}</option>` +
+      text.genderOptions.slice(1).map(opt => `<option>${opt}</option>`).join("");
+
 
       const degreeSel = document.getElementById("degree");
-      degreeSel.innerHTML = text.degreeOptions.map(opt => `<option value="${opt}">${opt}</option>`).join("");
+      degreeSel.innerHTML = `
+        <option value="" disabled selected>${text.selectPlaceholder}</option>
+        ${text.degreeOptions.slice(1).map(opt => `<option value="${opt}">${opt}</option>`).join("")}
+      `;
 
 
 
