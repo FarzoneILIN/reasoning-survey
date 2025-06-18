@@ -196,26 +196,15 @@ D：单一的（Single）
 <div id="questionnaire" class="hidden">
   <div id="question-box"></div>
 
-  <label id="is-expert-label">你是否该题目专业方向？</label>
-  <select id="is-expert">
-    <option value="">请选择</option>
-    <option value="是">是</option>
-    <option value="否">否</option>
-  </select>
+<label id="is-expert-label">你是否该题目专业方向？</label>
+<select id="is-expert"></select>
 
-  <label id="use-ai-label">是否使用 AI 辅助？</label>
-  <select id="use-ai">
-    <option value="">请选择</option>
-    <option value="是">是</option>
-    <option value="否">否</option>
-  </select>
+<label id="use-ai-label">是否使用 AI 辅助？</label>
+<select id="use-ai"></select>
 
-  <label id="did-search-label">是否检索了相关知识？</label>
-  <select id="did-search">
-    <option value="">请选择</option>
-    <option value="是">是</option>
-    <option value="否">否</option>
-  </select>
+<label id="did-search-label">是否检索了相关知识？</label>
+<select id="did-search"></select>
+
 
   <label id="reasoning-steps-label">推理过程：</label>
   <div id="reasoning-steps-container"></div>
@@ -288,18 +277,22 @@ D：单一的（Single）
       userInfo = { gender: g, school: s, degree: d, region: r };
       document.getElementById("user-info").classList.add("hidden");
       document.getElementById("tipi-test").classList.remove("hidden");
+
+      // 动态生成TIPI项目
+      const textItems = LANG_TEXT[currentLang].tipiItems;
       const ctr = document.getElementById("tipi-items");
       ctr.innerHTML = "";
-      tipiItems.forEach(({id,text})=>{
+      textItems.forEach((text, idx) => {
         const div = document.createElement("div");
         div.innerHTML = `
-          <label>${id}. ${text}</label>
-          <select id="tipi-${id}">
-            ${[...Array(7)].map((_,i)=>`<option value="${i+1}">${i+1}</option>`).join("")}
+          <label>${idx + 1}. ${text}</label>
+          <select id="tipi-${idx + 1}">
+            ${[...Array(7)].map((_, i) => `<option value="${i + 1}">${i + 1}</option>`).join("")}
           </select>`;
         ctr.appendChild(div);
       });
     }
+
     function confirmTipi() {
       const scores = {};
       tipiItems.forEach(({id})=>{
@@ -353,13 +346,13 @@ D：单一的（Single）
       const q = questions[questionIndex];
       let html = `
         <div class="question-card">
-          <h3 style="margin-bottom: 10px;">题目 ${questionIndex + 1} / ${questions.length}</h3>
+          <h3 style="margin-bottom: 10px;">${LANG_TEXT[currentLang].questionPrefix} ${questionIndex + 1} / ${questions.length}</h3>
       `;
 
       if (q.context) {
         html += `
           <div class="context-box">
-            <strong>上下文：</strong><br>${q.context}
+            <strong>${LANG_TEXT[currentLang].contextLabel}</strong><br>${q.context}
           </div>
         `;
       }
@@ -377,10 +370,11 @@ D：单一的（Single）
       document.getElementById("question-box").innerHTML = html;
       renderFinalAnswerOptions(q.choices);
       initReasoningSteps();
-      ["is-expert","use-ai","did-search"].forEach(id=>{
-        document.getElementById(id).value="";
+      ["is-expert", "use-ai", "did-search"].forEach(id => {
+        document.getElementById(id).value = "";
       });
     }
+
 
     function renderFinalAnswerOptions(choices) {
       const container = document.getElementById("final-answer");
@@ -527,15 +521,16 @@ D：单一的（Single）
     }
     function populateGroupOptions(maxGroup = 20) {
       const select = document.getElementById("group-select");
-      select.innerHTML = '<option value="">请选择</option>';  // 初始化
+      select.innerHTML = `<option value="">${LANG_TEXT[currentLang].selectPlaceholder}</option>`;
       for (let i = 1; i <= maxGroup; i++) {
         const val = `group_${i}`;
         const opt = document.createElement("option");
         opt.value = val;
-        opt.textContent = `第${i}组`;
+        opt.textContent = `${LANG_TEXT[currentLang].groupPrefix}${i}${LANG_TEXT[currentLang].groupSuffix}`;
         select.appendChild(opt);
       }
     }
+
 
 
 window.onload = () => {
@@ -646,7 +641,13 @@ D：单一的（Single）
     reasoningStepLabel: "推理步骤",
     deleteStep: "删除该步骤",
     alertIncompleteUserInfo: "请完整填写用户信息",
-
+    expertOptions: ["请选择", "是", "否"],
+    aiOptions: ["请选择", "是", "否"],
+    earchOptions: ["请选择", "是", "否"],
+    contextLabel: "上下文：",
+    groupPrefix: "第",
+    groupSuffix: "组",
+    questionPrefix: "题目",
 
   },
   en: {
@@ -714,8 +715,13 @@ D:Single
     reasoningStepLabel: "Reasoning Step",
     deleteStep: "Delete Step",
     alertIncompleteUserInfo: "Please complete all user info fields",
-
-
+    expertOptions: ["Please select", "Yes", "No"],
+    aiOptions: ["Please select", "Yes", "No"],
+    searchOptions: ["Please select", "Yes", "No"],
+    contextLabel: "Context:",
+    groupPrefix: "Group ",
+    groupSuffix: "",
+    questionPrefix: "Question",
   }
 };
 
@@ -795,6 +801,17 @@ D:Single
       // 完成提示
       document.getElementById("done-title").textContent = text.doneTitle;
       document.getElementById("reset-btn").textContent = text.reset;
+      // 专家选项
+      const expertSel = document.getElementById("is-expert");
+      expertSel.innerHTML = LANG_TEXT[currentLang].expertOptions.map(opt => `<option>${opt}</option>`).join("");
+
+      // AI辅助选项
+      const aiSel = document.getElementById("use-ai");
+      aiSel.innerHTML = LANG_TEXT[currentLang].aiOptions.map(opt => `<option>${opt}</option>`).join("");
+
+      // 检索选项
+      const searchSel = document.getElementById("did-search");
+      searchSel.innerHTML = LANG_TEXT[currentLang].searchOptions.map(opt => `<option>${opt}</option>`).join("");
 
       // 切换按钮
       document.getElementById("lang-btn-text").textContent = text.langBtn;
