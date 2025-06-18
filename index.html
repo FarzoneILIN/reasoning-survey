@@ -11,6 +11,14 @@
       margin: 0;
       color: #333;
     }
+    pre {
+  white-space: pre-wrap;  /* 让长行在边界自动换行 */
+  word-break: break-word; /* 如果有超长单词或无空格长串时，强制断开 */
+    }
+
+    ol {
+      word-break: break-word; 
+    }
 
     .container {
       max-width: 900px;
@@ -128,25 +136,26 @@ D：单一的（Single）
   </div>
 
 <!-- Step 2: 用户信息 -->
-<div id="user-info" class="hidden">
-  <label id="gender-label">性别：
-    <select id="gender"></select>
-  </label>
+<label id="gender-label"><span id="gender-label-text">性别：</span>
+  <select id="gender"></select>
+</label>
 
-  <label id="school-label">学校：
-    <input type="text" id="school">
-  </label>
+<label id="school-label"><span id="school-label-text">学校：</span>
+  <input type="text" id="school">
+</label>
 
-  <label id="degree-label">学历：
-    <select id="degree"></select>
-  </label>
+<label id="degree-label"><span id="degree-label-text">学历：</span>
+  <select id="degree"></select>
+</label>
 
-  <label id="region-label">省/直辖市：
-    <input type="text" id="region">
-  </label>
+<label id="region-label"><span id="region-label-text">省/直辖市：</span>
+  <input type="text" id="region">
+</label>
+
 
   <button id="tipi-btn" onclick="showTipi()">填写大五人格测试</button>
 </div>
+
 
 
 <!-- Step 2.5: TIPI 测试 -->
@@ -724,18 +733,20 @@ D:Single
       document.querySelector("#instructions button[onclick='clearCache()']").textContent = text.clearCache;
 
       // 用户信息表单
-      document.getElementById("gender-label").textContent = text.genderLabel;
-      document.getElementById("school-label").textContent = text.schoolLabel;
-      document.getElementById("degree-label").textContent = text.degreeLabel;
-      document.getElementById("region-label").textContent = text.regionLabel;
+      document.getElementById("gender-label-text").textContent = text.genderLabel;
+      document.getElementById("school-label-text").textContent = text.schoolLabel;
+      document.getElementById("degree-label-text").textContent = text.degreeLabel;
+      document.getElementById("region-label-text").textContent = text.regionLabel;
+
       document.getElementById("tipi-btn").textContent = text.tipiBtn;
 
       // 性别选项
       const genderSel = document.getElementById("gender");
-      genderSel.innerHTML = text.genderOptions.map(opt => `<option>${opt}</option>`).join("");
+      genderSel.innerHTML = text.genderOptions.map(opt => `<option value="${opt}">${opt}</option>`).join("");
 
       const degreeSel = document.getElementById("degree");
-      degreeSel.innerHTML = text.degreeOptions.map(opt => `<option>${opt}</option>`).join("");
+      degreeSel.innerHTML = text.degreeOptions.map(opt => `<option value="${opt}">${opt}</option>`).join("");
+
 
 
       // TIPI 部分
