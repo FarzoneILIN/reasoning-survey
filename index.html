@@ -87,12 +87,17 @@
 </head>
 <>
   <div class="container">
+  <div style="text-align: right;">
+    <button onclick="switchLanguage()">
+      <span id="lang-btn-text">English</span>
+    </button>
+  </div>
 
-  <h1>推理问卷标注系统</h1>
+  <h1 id="main-title"></h1>
 
   <!-- Step 1: 说明区域 -->
   <div id="instructions">
-    <h3>说明：</h3>
+    <h3 id="instructions-title"></h3>
     <ol>
       <li><strong>问题</strong>：认真阅读题目，仔细思考所给选项，从中选择正确的答案。</li>
       <li><strong>推理过程</strong>：从你最初认为可能正确的答案开始解释。思考为什么某些选项可能正确，为什么其他可能不正确。
@@ -117,109 +122,103 @@ D：单一的（Single）
 这种反射保留了声音的结构，使它能作为原声的清晰重复回到听者耳中。但‘镜面反射’并不在提供的选项中。
 让我确认一下术语是否准确。在声音的语境中，有时人们也称其为‘硬反射’或‘直接反射’。所以答案很明确，我应该选择 A。”
     </pre>
-    <button onclick="showUserInfo()">我已阅读说明，开始填写</button>
-    <button onclick="clearCache()">🧹 清除缓存数据</button>
+    <button id="start-btn" onclick="showUserInfo()"></button>
+    <button id="clear-btn" onclick="clearCache()"></button>
+
   </div>
 
   <!-- Step 2: 用户信息 -->
-  <div id="user-info" class="hidden">
-    <label>性别：
-      <select id="gender">
-        <option value="">请选择</option>
-        <option value="男">男</option>
-        <option value="女">女</option>
-        <option value="其他">其他</option>
-      </select>
-    </label>
-    <label>学校：<input type="text" id="school"></label>
-    <label>学历：
-      <select id="degree">
-        <option value="">请选择</option>
-        <option value="本科">本科</option>
-        <option value="硕士">硕士</option>
-        <option value="博士">博士</option>
-        <option value="其他">其他</option>
-      </select>
-    </label>
-    <label>省/直辖市：<input type="text" id="region"></label>
-    <button onclick="showTipi()">填写大五人格测试</button>
-  </div>
+<label id="gender-label">性别：
+  <select id="gender"></select>
+</label>
 
-  <!-- Step 2.5: TIPI 测试 -->
-  <div id="tipi-test" class="hidden">
-    <h3>TIPI 大五人格测试</h3>
-    <p>请根据你自己的感觉，选择每一对形容词在你身上的适用程度（1=非常不同意，7=非常同意）</p>
-    <div id="tipi-items"></div>
-    <button onclick="confirmTipi()">确认提交 TIPI 测试</button>
-  </div>
+<label id="school-label">学校：
+  <input type="text" id="school">
+</label>
+
+<label id="degree-label">学历：
+  <select id="degree"></select>
+</label>
+
+<label id="region-label">省/直辖市：
+  <input type="text" id="region">
+</label>
+
+<button id="tipi-btn" onclick="showTipi()">填写大五人格测试</button>
+
+<!-- Step 2.5: TIPI 测试 -->
+<div id="tipi-test" class="hidden">
+  <h3 id="tipi-title">TIPI 大五人格测试</h3>
+  <p id="tipi-instruction">请根据你自己的感觉，选择每一对形容词在你身上的适用程度（1=非常不同意，7=非常同意）</p>
+  <div id="tipi-items"></div>
+  <button id="tipi-confirm-btn" onclick="confirmTipi()">确认提交 TIPI 测试</button>
+</div>
 
 <!-- Step 3: 选择题目组 -->
 <div id="group-select-section" class="hidden">
-  <label>请选择题目组（每组包含不同的题目组合）：</label>
+  <label id="group-select-label">请选择题目组（每组包含不同的题目组合）：</label>
   <select id="group-select">
     <!-- 选项将由 JS 动态生成 -->
   </select>
-  <button onclick="startGroup()">开始标注</button>
+  <button id="start-group-btn" onclick="startGroup()">开始标注</button>
 </div>
 
+<!-- Step 4: 选择推理类型 -->
+<div id="category-select-section" class="hidden">
+  <label id="category-select-label">选择推理类型：</label>
+  <select id="category-select">
+    <option value="">请选择</option>
+    <option value="abduction">Abduction（溯因）</option>
+    <option value="deduction">Deduction（演绎）</option>
+    <option value="induction">Induction（归纳）</option>
+  </select>
+  <button id="start-category-btn" onclick="startCategory()">开始标注</button>
+</div>
 
-  <!-- Step 4: 选择推理类型 -->
-  <div id="category-select-section" class="hidden">
-    <label>选择推理类型：</label>
-    <select id="category-select">
-      <option value="">请选择</option>
-      <option value="abduction">Abduction（溯因）</option>
-      <option value="deduction">Deduction（演绎）</option>
-      <option value="induction">Induction（归纳）</option>
-    </select>
-    <button onclick="startCategory()">开始标注</button>
-  </div>
+<!-- Step 5: 标注界面 -->
+<div id="questionnaire" class="hidden">
+  <div id="question-box"></div>
 
-  <!-- Step 5: 标注界面 -->
-  <div id="questionnaire" class="hidden">
-    <div id="question-box"></div>
+  <label id="is-expert-label">你是否该题目专业方向？</label>
+  <select id="is-expert">
+    <option value="">请选择</option>
+    <option value="是">是</option>
+    <option value="否">否</option>
+  </select>
 
-    <label>你是否该题目专业方向？</label>
-    <select id="is-expert">
-      <option value="">请选择</option>
-      <option value="是">是</option>
-      <option value="否">否</option>
-    </select>
+  <label id="use-ai-label">是否使用 AI 辅助？</label>
+  <select id="use-ai">
+    <option value="">请选择</option>
+    <option value="是">是</option>
+    <option value="否">否</option>
+  </select>
 
-    <label>是否使用 AI 辅助？</label>
-    <select id="use-ai">
-      <option value="">请选择</option>
-      <option value="是">是</option>
-      <option value="否">否</option>
-    </select>
+  <label id="did-search-label">是否检索了相关知识？</label>
+  <select id="did-search">
+    <option value="">请选择</option>
+    <option value="是">是</option>
+    <option value="否">否</option>
+  </select>
 
-    <label>是否检索了相关知识？</label>
-    <select id="did-search">
-      <option value="">请选择</option>
-      <option value="是">是</option>
-      <option value="否">否</option>
-    </select>
+  <label id="reasoning-steps-label">推理过程：</label>
+  <div id="reasoning-steps-container"></div>
+  <button type="button" id="add-step-btn" onclick="addReasoningStep()">➕ 新增步骤</button>
 
-    <label>推理过程：</label>
-    <div id="reasoning-steps-container"></div>
-    <button type="button" onclick="addReasoningStep()">➕ 新增步骤</button>
+  <label id="final-answer-label">最终答案：</label>
+  <div id="final-answer"></div>
 
-    <label>最终答案：</label>
-    <div id="final-answer"></div>
+  <br/>
+  <button id="go-back-btn" onclick="goBack()">⬅️ 返回上一题</button>
+  <button id="save-next-btn" onclick="saveAndNext()">保存并进入下一题</button>
+  <button id="download-btn" onclick="downloadResults()">📤 下载已标注数据</button>
+  <button id="switch-group-btn" onclick="switchGroup()">🔁 切换题目组</button>
+</div>
 
-
-    <br/>
-    <button onclick="goBack()">⬅️ 返回上一题</button>
-    <button onclick="saveAndNext()">保存并进入下一题</button>
-    <button onclick="downloadResults()">📤 下载已标注数据</button>
-    <button onclick="switchGroup()">🔁 切换题目组</button>
-  </div>
-
-  <!-- 完成提示 -->
-  <div id="done" class="hidden">
-    <h2>本组题目已标注完成 🎉</h2>
-    <button onclick="reset()">切换题目组</button>
-  </div>
+<!-- 完成提示 -->
+<div id="done" class="hidden">
+  <h2 id="done-title">本组题目已标注完成 🎉</h2>
+  <button id="reset-btn" onclick="reset()">切换题目组</button>
+</div>
 
   <script>
     // Firebase 初始化
@@ -267,7 +266,7 @@ D：单一的（Single）
       const d = document.getElementById("degree").value.trim();
       const r = document.getElementById("region").value.trim();
       if (!g || !s || !d || !r) {
-        return alert("请完整填写用户信息");
+        return alert(LANG_TEXT[currentLang].alertIncompleteUserInfo);
       }
       userInfo = { gender: g, school: s, degree: d, region: r };
       document.getElementById("user-info").classList.add("hidden");
@@ -372,12 +371,12 @@ D：单一的（Single）
       if (Array.isArray(choices) && choices.length > 0) {
         const sel = document.createElement("select");
         sel.id = "final-answer-select";
-        sel.innerHTML = `<option value="">请选择</option>`;
+        sel.innerHTML = `<option value="">${LANG_TEXT[currentLang].selectPlaceholder}</option>`;
         for (const c of choices) {
           const m = c.match(/^\((.)\)\s*(.*)$/);
           if (m) sel.innerHTML += `<option value="${m[1]}">${m[1]}: ${m[2]}</option>`;
         }
-        sel.innerHTML += `<option value="不确定">不确定</option>`;
+        sel.innerHTML += `<option value="${LANG_TEXT[currentLang].uncertainOption}">${LANG_TEXT[currentLang].uncertainOption}</option>`;
         container.appendChild(sel);
       } else {
         const input = document.createElement("input");
@@ -457,10 +456,11 @@ D：单一的（Single）
       const idx = ctr.children.length + 1;
       const div = document.createElement("div");
       div.innerHTML = `
-        <label>推理步骤 ${idx}</label>
+        <label>${LANG_TEXT[currentLang].reasoningStepLabel} ${idx}</label>
         <textarea>${txt}</textarea>
-        <button type="button" onclick="this.parentNode.remove(),initReasoningSteps()">删除该步骤</button>
+        <button type="button" onclick="this.parentNode.remove(),initReasoningSteps()">${LANG_TEXT[currentLang].deleteStep}</button>
       `;
+
       ctr.appendChild(div);
     }
     function collectSteps() {
@@ -521,36 +521,272 @@ D：单一的（Single）
     }
 
 
-    window.onload = () => {
+window.onload = () => {
+  // 恢复用户信息
   const u = localStorage.getItem("user_info");
   if (u) userInfo = JSON.parse(u);
 
-      populateGroupOptions(210);  // 这里你可以随时调整最大组数
-      
-      const lastGroup = localStorage.getItem("last_group");
-      if (lastGroup) {
-        currentCategory = lastGroup;
-        loadCompleted();
-        fetch(`10_groups_output/${currentCategory}.jsonl`)
-          .then(r => r.text())
-          .then(text => {
-            questions = text.trim().split("\n").map(l => JSON.parse(l));
-            questionIndex = questions.findIndex(q => {
-              const qid = q.id || q.index;
-              return !completedMap[`${currentCategory}:${qid}`];
-            });
+  // 初始化语言渲染
+  renderLang();
 
-            if (questionIndex === -1) {
-              document.getElementById("done").classList.remove("hidden");
-            } else {
-              document.getElementById("instructions").classList.add("hidden");
-              document.getElementById("questionnaire").classList.remove("hidden");
-              showQuestion();
-            }
-          })
-          .catch(e => console.error("恢复题目失败", e));
-      }
-    };
+  
+  populateGroupOptions(210);  
+
+  // 尝试恢复上次状态
+  const lastGroup = localStorage.getItem("last_group");
+  if (lastGroup) {
+    currentCategory = lastGroup;
+    loadCompleted();
+    fetch(`10_groups_output/${currentCategory}.jsonl`)
+      .then(r => r.text())
+      .then(text => {
+        questions = text.trim().split("\n").map(l => JSON.parse(l));
+        questionIndex = questions.findIndex(q => {
+          const qid = q.id || q.index;
+          return !completedMap[`${currentCategory}:${qid}`];
+        });
+
+        if (questionIndex === -1) {
+          document.getElementById("done").classList.remove("hidden");
+        } else {
+          document.getElementById("instructions").classList.add("hidden");
+          document.getElementById("questionnaire").classList.remove("hidden");
+          showQuestion();
+        }
+      })
+      .catch(e => console.error("恢复题目失败", e));
+  }
+};
+
+
+    let currentLang = localStorage.getItem("current_lang") || "zh";
+
+    const LANG_TEXT = {
+  zh: {
+    langBtn: "English",
+    instructionsTitle: "推理问卷标注系统",
+    instructionsContent: `
+1. <strong>问题</strong>：认真阅读题目，仔细思考所给选项。
+2. <strong>推理过程</strong>：从你最初认为可能正确的答案开始解释，考虑为什么某些选项可能正确或不正确。
+  - 描述你的思考过程，不要跳过任何步骤，即使看似微不足道。
+  - 如果做出假设或猜测，请解释原因。如果改变主意或放弃某选项，请说明理由。
+3. <strong>最终答案</strong>：在完成整个思考过程后，选择你认为正确的选项，并解释原因。如果不确定，请说明不确定性。
+    `,
+    exampleTitle: "好的回答示例：",
+    exampleContent: `
+问题：“回声是由哪种类型的声音反射产生的？”
+A：直接的（Direct）
+B：远处的（Distant）
+C：变化的（Varied）
+D：单一的（Single）
+
+- “这个问题是关于哪种反射类型会产生回声，并提供了四个选项。将它们与‘反射’结合，可以得到‘直接反射’、‘远距离反射’、‘变化反射’和‘单一反射’。
+首先我需要回忆一下什么是回声。在物理课上，我学过回声是由镜面反射的声波产生的。这种反射发生在声波遇到大而平滑且坚硬的表面（比如悬崖或墙壁）时，声波会沿一个方向有序地反射回来。这种反射保留了声音的结构，使它能作为原声的清晰重复回到听者耳中。但‘镜面反射’并不在提供的选项中。
+让我确认一下术语是否准确。在声音的语境中，有时人们也称其为‘硬反射’或‘直接反射’。所以答案很明确，我应该选择 A。”
+    `,
+    genderLabel: "性别：",
+    schoolLabel: "学校：",
+    degreeLabel: "学历：",
+    regionLabel: "省/直辖市：",
+    degreeOptions: ["请选择", "本科", "硕士", "博士", "其他"],
+    genderOptions: ["请选择", "男", "女", "其他"],
+    groupSelectLabel: "请选择题目组（每组包含不同的题目组合）：",
+    categorySelectLabel: "选择推理类型：",
+    reasoningStepsLabel: "推理过程：",
+    finalAnswerLabel: "最终答案：",
+    isExpertLabel: "你是否该题目专业方向？",
+    useAiLabel: "是否使用 AI 辅助？",
+    didSearchLabel: "是否检索了相关知识？",
+    selectPlaceholder: "请选择",
+    uncertainOption: "不确定",
+    saveAndNext: "保存并进入下一题",
+    goBack: "⬅️ 返回上一题",
+    switchGroup: "🔁 切换题目组",
+    download: "📤 下载已标注数据",
+    clearCache: "🧹 清除缓存数据",
+    tipiItems: [
+      "我属于外向型、爱交际",
+      "我属于冷静型、安静",
+      "我喜欢有条理、做事计划性强",
+      "我有些懒惰",
+      "我容易紧张",
+      "我情绪稳定，不易心烦",
+      "我是有创造力、有想象力的人",
+      "我是传统型、不会尝试新奇事物",
+      "我考虑周到、关心他人",
+      "我有时很苛刻"
+    ],
+    tipiBtn: "填写大五人格测试",
+    tipiTitle: "TIPI 大五人格测试",
+    tipiInstruction: "请根据你自己的感觉，选择每一对形容词在你身上的适用程度（1=非常不同意，7=非常同意）",
+    tipiConfirm: "确认提交 TIPI 测试",
+    startFilling: "我已阅读说明，开始填写",
+    startGroup: "开始标注",
+    startCategory: "开始标注",
+    addStep: "➕ 新增步骤",
+    doneTitle: "本组题目已标注完成 🎉",
+    reset: "切换题目组",
+    reasoningStepLabel: "推理步骤",
+    deleteStep: "删除该步骤",
+    alertIncompleteUserInfo: "请完整填写用户信息",
+
+
+  },
+  en: {
+    langBtn: "中文",
+    instructionsTitle: "Reasoning Questionnaire Annotation System",
+    instructionsContent: `
+1. <strong>Question</strong>: Read the question carefully. Think about the options provided.
+2. <strong>Reasoning</strong>: Begin by explaining what you initially think the answer could be. Consider why certain options might or might not be correct.
+  - Describe your thought process—do not skip any steps, even if they seem insignificant.
+  - If you make an assumption or guess, explain why you made that choice. If you change your mind or discard an option, clarify why that happened.
+3. <strong>Final Answer</strong>: After completing your thought process, choose the option you believe to be correct, and explain why you selected it. If you're unsure, please indicate your uncertainty.
+    `,
+    exampleTitle: "Example of a good response:",
+    exampleContent: `
+question:"An echo is produced by what type of reflection of sound source?"
+A:Direct
+B:Distant
+C:Varied
+D:Single
+
+- "The question is about what kind of reflection produce an echo, and four options are provided. Combining them with 'reflection', we have 'Direct reflection', 'Distant reflection','Varied reflection' and 'Single reflection'. First I need to recall what is an echo. In physics classes, I was taught that an echo is produced by 'specular reflection' of sound waves. This type of reflection occurs when sound waves encounter a large, smooth, and rigid surface, such as a cliff or a wall, causing the waves to reflect coherently in a single direction. This preserves the sound's structure and allows it to return to the listener as a distinct repetition of the original sound. But 'specular reflection' does not exist in the options provided. Let me check if the terminology is correct. In the context of sound, sometimes people refer to it as a 'hard reflection' or 'direct reflection'. So the answer is clear, I should choose A."
+    `,
+    genderLabel: "Gender:",
+    schoolLabel: "School:",
+    degreeLabel: "Degree:",
+    regionLabel: "Province/City:",
+    degreeOptions: ["Please select", "Undergraduate", "Master", "PhD", "Other"],
+    genderOptions: ["Please select", "Male", "Female", "Other"],
+    groupSelectLabel: "Please select a question group (each contains a different question mix):",
+    categorySelectLabel: "Select reasoning type:",
+    reasoningStepsLabel: "Reasoning process:",
+    finalAnswerLabel: "Final answer:",
+    isExpertLabel: "Are you an expert in this topic?",
+    useAiLabel: "Did you use AI assistance?",
+    didSearchLabel: "Did you search for related knowledge?",
+    selectPlaceholder: "Please select",
+    uncertainOption: "Uncertain",
+    saveAndNext: "Save and Next",
+    goBack: "⬅️ Previous question",
+    switchGroup: "🔁 Switch group",
+    download: "📤 Download annotations",
+    clearCache: "🧹 Clear cached data",
+    tipiItems: [
+      "I am extroverted, sociable",
+      "I am reserved, quiet",
+      "I am dependable, self-disciplined",
+      "I am disorganized, careless",
+      "I am anxious, easily upset",
+      "I am calm, emotionally stable",
+      "I am open to new experiences, complex",
+      "I am conventional, uncreative",
+      "I am sympathetic, warm",
+      "I am critical, quarrelsome"
+    ],
+    tipiBtn: "Fill in TIPI test",
+    tipiTitle: "TIPI Big Five Personality Test",
+    tipiInstruction: "Please select how well each pair of traits applies to you (1 = strongly disagree, 7 = strongly agree)",
+    tipiConfirm: "Submit TIPI test",
+    startFilling: "I have read the instructions, start filling",
+    startGroup: "Start annotation",
+    startCategory: "Start annotation",
+    addStep: "➕ Add step",
+    doneTitle: "Group completed 🎉",
+    reset: "Switch group",
+    reasoningStepLabel: "Reasoning Step",
+    deleteStep: "Delete Step",
+    alertIncompleteUserInfo: "Please complete all user info fields",
+
+
+  }
+};
+
+    function renderLang() {
+      const text = LANG_TEXT[currentLang];
+
+      // 页面主标题
+      document.querySelector("h1").textContent = text.instructionsTitle;
+      document.getElementById("main-title").textContent = text.instructionsTitle;
+      document.getElementById("instructions-title").textContent = text.instructionsTitle;
+      document.getElementById("start-btn").textContent = text.startFilling;
+      document.getElementById("clear-btn").textContent = text.clearCache;
+
+      // 说明区域
+      document.querySelector("#instructions h3").textContent = text.instructionsTitle;
+      document.querySelector("#instructions ol").innerHTML = text.instructionsContent;
+      document.querySelector("#instructions pre").textContent = text.exampleContent;
+      document.querySelector("#instructions h4").textContent = text.exampleTitle;
+      document.querySelector("#instructions button[onclick='showUserInfo()']").textContent = text.startFilling;
+      document.querySelector("#instructions button[onclick='clearCache()']").textContent = text.clearCache;
+
+      // 用户信息表单
+      document.getElementById("gender-label").textContent = text.genderLabel;
+      document.getElementById("school-label").textContent = text.schoolLabel;
+      document.getElementById("degree-label").textContent = text.degreeLabel;
+      document.getElementById("region-label").textContent = text.regionLabel;
+      document.getElementById("tipi-btn").textContent = text.tipiBtn;
+
+      // 性别选项
+      const genderSel = document.getElementById("gender");
+      genderSel.innerHTML = text.genderOptions.map(opt => `<option>${opt}</option>`).join("");
+
+      // 学历选项
+      const degreeSel = document.getElementById("degree");
+      degreeSel.innerHTML = text.degreeOptions.map(opt => `<option>${opt}</option>`).join("");
+
+      // TIPI 部分
+      document.getElementById("tipi-title").textContent = text.tipiTitle;
+      document.getElementById("tipi-instruction").textContent = text.tipiInstruction;
+      document.getElementById("tipi-confirm-btn").textContent = text.tipiConfirm;
+      const tipiCtr = document.getElementById("tipi-items");
+      tipiCtr.innerHTML = "";
+      text.tipiItems.forEach((t, idx) => {
+        const div = document.createElement("div");
+        div.innerHTML = `
+          <label>${idx + 1}. ${t}</label>
+          <select id="tipi-${idx + 1}">
+            ${[...Array(7)].map((_, i) => `<option value="${i + 1}">${i + 1}</option>`).join("")}
+          </select>`;
+        tipiCtr.appendChild(div);
+      });
+
+      // 题目组选择
+      document.getElementById("group-select-label").textContent = text.groupSelectLabel;
+      document.getElementById("start-group-btn").textContent = text.startGroup;
+
+      // 推理类型
+      document.getElementById("category-select-label").textContent = text.categorySelectLabel;
+      document.getElementById("start-category-btn").textContent = text.startCategory;
+
+      // 标注表单
+      document.getElementById("is-expert-label").textContent = text.isExpertLabel;
+      document.getElementById("use-ai-label").textContent = text.useAiLabel;
+      document.getElementById("did-search-label").textContent = text.didSearchLabel;
+      document.getElementById("reasoning-steps-label").textContent = text.reasoningStepsLabel;
+      document.getElementById("final-answer-label").textContent = text.finalAnswerLabel;
+      document.getElementById("add-step-btn").textContent = text.addStep;
+
+      // 标注表单按钮
+      document.getElementById("go-back-btn").textContent = text.goBack;
+      document.getElementById("save-next-btn").textContent = text.saveAndNext;
+      document.getElementById("download-btn").textContent = text.download;
+      document.getElementById("switch-group-btn").textContent = text.switchGroup;
+
+      // 完成提示
+      document.getElementById("done-title").textContent = text.doneTitle;
+      document.getElementById("reset-btn").textContent = text.reset;
+
+      // 切换按钮
+      document.getElementById("lang-btn-text").textContent = text.langBtn;
+    }
+
+
+    function switchLanguage() {
+      currentLang = currentLang === "zh" ? "en" : "zh";
+      localStorage.setItem("current_lang", currentLang);
+      renderLang();
+    }
 
 
 
