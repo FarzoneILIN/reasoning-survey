@@ -127,24 +127,27 @@ D：单一的（Single）
 
   </div>
 
-  <!-- Step 2: 用户信息 -->
-<label id="gender-label">性别：
-  <select id="gender"></select>
-</label>
+<!-- Step 2: 用户信息 -->
+<div id="user-info" class="hidden">
+  <label id="gender-label">性别：
+    <select id="gender"></select>
+  </label>
 
-<label id="school-label">学校：
-  <input type="text" id="school">
-</label>
+  <label id="school-label">学校：
+    <input type="text" id="school">
+  </label>
 
-<label id="degree-label">学历：
-  <select id="degree"></select>
-</label>
+  <label id="degree-label">学历：
+    <select id="degree"></select>
+  </label>
 
-<label id="region-label">省/直辖市：
-  <input type="text" id="region">
-</label>
+  <label id="region-label">省/直辖市：
+    <input type="text" id="region">
+  </label>
 
-<button id="tipi-btn" onclick="showTipi()">填写大五人格测试</button>
+  <button id="tipi-btn" onclick="showTipi()">填写大五人格测试</button>
+</div>
+
 
 <!-- Step 2.5: TIPI 测试 -->
 <div id="tipi-test" class="hidden">
@@ -731,9 +734,9 @@ D:Single
       const genderSel = document.getElementById("gender");
       genderSel.innerHTML = text.genderOptions.map(opt => `<option>${opt}</option>`).join("");
 
-      // 学历选项
       const degreeSel = document.getElementById("degree");
       degreeSel.innerHTML = text.degreeOptions.map(opt => `<option>${opt}</option>`).join("");
+
 
       // TIPI 部分
       document.getElementById("tipi-title").textContent = text.tipiTitle;
